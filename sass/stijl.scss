@@ -1,0 +1,1009 @@
+/*! 
+    Theme Name: VISO Theme
+    Theme URI:  http://www.viso.be
+    Description: Theme using the colors of VISO, a school in Ghent
+    Version: 0.1
+    Author: Stef Bastiaansen
+    Author URI: http://www.megasnort.com
+	License: GNU General Public License v2 or later
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+	Tags: Flat, clean, sober, left-sidebar, responsive
+*/  
+
+/*!
+	CSS was written in SASS. Files included in 'sass'-folder
+*/
+
+// Use imports so we have just one .css = -3 requests
+@import 'reset';
+@import 'clearfix';
+@import 'jquery.fancybox';
+
+$wit: #FFF;
+$zwart: #111;
+$lichtgrijs: #AAA;
+$rood: #EE0900;
+$groen: #ABC8B8;
+
+$grijs: #888;
+
+$rechtsbreedte: 30%;
+$linksmarge: 4em;
+
+$superlichtgrijs: #EEE;
+
+$rechtskleinbreedte: 32%; 
+
+
+.alignleft
+{
+	float:left;
+	margin-right:10px;
+	margin-bottom:10px;
+}
+
+
+
+.alignright
+{
+	float:right;
+	margin-left:10px;
+	margin-bottom:10px;
+}
+
+.size-medium, .size-thumbnail
+{
+	border:1px solid $superlichtgrijs;
+	padding:2px;
+	cursor: -webkit-zoom-in;
+	cursor: -moz-zoom-in;
+}
+
+wp-caption
+{
+	
+}
+
+/*
+html, body
+{
+	height: 100%;
+}
+
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -155px;
+}
+body > footer, .push {
+	height: 155px; 
+}
+*/
+body
+{ 
+
+	background-image: url('images/greenpix.png');
+	background-position: 0 0;
+	background-size: 100% - $rechtsbreedte 100% ;
+	background-repeat: no-repeat;
+
+	
+	font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+	font-size: 15px;
+	font-weight:300;
+
+
+	> header
+	{
+		/* background: url('images/logo_viso_gewoon.png') no-repeat ($linksmarge - 1.2em) center $wit;*/
+		background-repeat: no-repeat;
+		background-position: ($linksmarge - 1.2em) center;
+		background-color: $wit;
+		background-size: auto 100%;
+		height: 8.25em;
+		display:block;
+		padding-left: ($linksmarge);
+		padding-top: 1.7em;
+		
+		h1
+		{
+			font-size: 3.2em;
+			padding-bottom:0.15em;
+		}
+	}
+	
+	a:link, a:visited
+	{
+		text-decoration: none;
+		color:$rood;
+	}
+	
+	a:hover, a:active
+	{
+		border-bottom:1px dotted $rood;
+	}
+	
+	h2
+	{
+		font-weight: 300;
+		color:$rood;
+		font-size: 1.4em;
+		text-transform: uppercase;
+		padding-bottom: 0.5em;
+	}
+	
+	h3
+	{
+		font-weight: 300;
+		color:$rood;
+		font-size: 1.3em;
+		text-transform: uppercase;
+		padding-bottom: 0.5em;
+	}
+	
+	> #aside
+	{
+		float:left;
+		width: $rechtsbreedte;
+		background-color: $wit;
+		padding-bottom: 2em;
+		
+		> li
+		{
+			padding:2.5em 2.5em 1em 2.2em;
+			
+			ul
+			{
+				line-height: 1.5em;
+				list-style: inside disc;
+				margin-left:1em;
+				
+				li
+				{
+					text-indent: -1em;
+				}
+				
+				.current-cat a
+				{
+					font-weight: 600;
+				}
+			}
+		}	
+	}
+
+} 
+
+
+#nav
+{
+	background-color:$zwart;
+	width:100%;
+	float:left;
+	position: relative;	
+	min-height: 2.6em;
+	
+	a#menuknop:link,a#menuknop:visited
+	{
+		display:none;
+	}
+	
+	.nav
+	{
+		display:block;
+		float:left;
+		margin-left: ($linksmarge - 1.4em);
+
+		li
+		{
+			float:left;
+							
+			a:link, a:visited
+			{
+				text-decoration: none;
+				color:white;
+				display: block;
+				float:left;
+				padding: 0.82em 1.6em;
+				text-transform: uppercase;
+			}
+			
+			a:hover,a:active
+			{
+				border-width: 0;
+				color:$rood;
+			}
+			
+		}
+		
+		li.current_page_item
+		{
+			a
+			{
+				font-weight: 700;
+			}
+		}
+	}
+	
+	#searchform
+	{
+		width:$rechtsbreedte;
+		float:right;
+		padding-top:0.5em;
+				
+		input[type="text"]
+		{
+			height: 1.8em;
+			border-radius: 0.5em 0 0 0.5em ;
+			border: $wit 0 solid;
+			float:left;
+			padding:0.1em 0.1em 0.1em 0.5em;
+			margin-left: 3em;
+			width: 60%;
+			font-size: 0.8em;
+			color:#777;
+		}
+		
+		input[type="text"]:focus
+		{
+			color:$zwart;
+		}
+
+		
+		input[type="submit"]
+		{
+			font-size: 0.8em;
+			float:left;
+			display: block;
+			height: 2em;
+			width: 2.5em;
+			border-radius: 0 0.5em 0.5em 0 ;
+			background-color: $rood;
+			background:url('images/zoek.png') center center no-repeat $rood ;
+			transition: background-color 0.15s;
+			border-width: 0;
+		}
+		
+		input[type="submit"]:hover
+		{
+			background-color: $groen;
+		}
+	}
+}
+
+#content
+{
+	clear:both;
+	float:left;
+	width: 100% - $rechtsbreedte;
+	background-color: $groen;	
+	padding-top: 2em;
+	float:left;
+
+	iframe
+	{
+		width:100%; 
+		height:400px;
+		border-width: 0;
+	}
+
+	#commentform
+	{
+		line-height: 1.45em;
+		
+		label
+		{
+			display:block;
+		}
+		
+		input[type="text"], textarea
+		{
+			float:left;
+			width:95%;
+			border: $lichtgrijs 1px solid;
+			padding:1.5%;
+			border-radius: 0.3em;
+			margin: .3em 0;
+			color:$grijs;
+		}
+		
+		input[type="text"]:focus, textarea:focus
+		{
+			border-color:$grijs;
+			color:$zwart;
+		}
+		
+		.comment-notes, .logged-in-as
+		{
+			 padding-bottom: 0.4em;
+		}
+		
+		.form-allowed-tags
+		{
+			font-size: 0.8em;
+			color:$grijs;
+			clear:left;
+		}
+		
+		
+		
+		input[type="submit"]
+		{
+			border-radius: 0.3em;
+			background-color: $rood;
+			color:$wit;
+			transition: background-color 0.1s;
+			border-width: 0;
+			padding:0.3em;
+			font-size: 0.9em;
+			margin-top: 0.2em;
+			cursor: pointer;
+		}
+		
+		input[type="submit"]:hover
+		{
+			background-color: $groen;
+		}
+		
+	}
+
+	article
+	{
+		background-color:$wit;
+		margin: 0em $linksmarge 2em ($linksmarge);
+		padding: 2em;
+		border-radius: 0.4em;
+		max-width: 40em;
+		
+		strong
+		{
+			font-weight: 700;
+		}
+		
+		h1
+		{
+			margin-bottom:0.5em;
+			border-bottom: 1px solid $superlichtgrijs;
+			padding-bottom: 0.8em;
+			
+			a
+			{
+				color:$rood;
+				font-size: 2em;
+				text-transform: uppercase;
+				margin-right:0.4em;
+			} 
+			
+			span
+			{
+				font-size: 0.8em;
+				white-space: nowrap;
+				color:$grijs;
+			}
+			
+		}
+		
+		
+		h3
+		{
+			border-bottom: 1px solid $superlichtgrijs;
+			padding-bottom:0.3em;
+		}
+		
+		.comment
+		{
+			line-height: 1.5em;
+			
+			li
+			{
+				margin-left:2em;
+			}
+			
+			.comment-body
+			{
+				position: relative;
+			}
+			
+			.comment-author
+			{
+			
+				background-color: $superlichtgrijs;
+				padding: 4px 4px 0 4px;
+
+				img
+				{
+					border: 1px solid $lichtgrijs;
+					border-radius: 0.3em;
+				}
+				
+				.says
+				{
+					display:none;
+				}
+				
+				cite					
+				{
+					display:block;
+					position: absolute;
+					top:9px;
+					left:43px;
+				}
+			}
+			
+			p
+			{
+				padding:2px;
+			}
+			
+			.comment-meta
+			{
+				font-size: 0.8em;	
+				position: absolute;
+				top: 9px;
+				right: 7px;
+			}
+			
+			.reply
+			{
+				padding-bottom: 1em;
+				
+				.comment-reply-link
+				{
+					font-size: 0.8em;	
+				}
+
+			}
+			
+			.comment-reply-link:before
+			{
+				content: "\00BB  ";
+			}
+		}
+		
+		figure
+		{
+			width: 100%;
+			display: block;
+			border-bottom: $superlichtgrijs 1px solid;
+			padding-bottom: 0.5em;
+			
+			a:link, a:visited, a:hover, a:active
+			{
+				border-width: 0;
+				max-height: 17em;
+				display:block;
+				overflow: hidden;
+				
+				img
+				{
+					width:100%;
+					height:auto;
+
+				}
+				
+			}
+		}
+		
+		.content
+		{
+			padding:0.2em 0 1.1em 0;
+			
+			p
+			{
+				line-height: 1.5em;
+				margin: 0.5em 0 1em 0;
+			}
+			
+			ul
+			{
+				list-style: disc;
+				line-height: 1.5em;
+				list-style-position: inside;
+				margin-left:2.5em;
+				
+				li
+				{
+					text-indent: -1em;
+				}
+				
+				ul
+				{
+					list-style: circle;
+					line-height: 1.5em;
+					list-style-position: inside;
+
+					margin-left:2em;
+					
+					li
+					{
+						text-indent: -1em;
+					}
+				}
+			}
+			
+			h4
+			{
+				color:$rood;
+				font-weight: 300;
+				text-transform: uppercase;
+				font-size: 1.2em;
+				margin:1.8em 0 0.5em 0;
+			}
+		}
+		
+		.footer
+		{
+			border-top: 1px solid #EEE;
+			width:100%;
+			font-size: 0.8em;
+			padding-top:1em;
+			padding-bottom:0.3em;
+			
+			.categorieen
+			{
+				float:left;
+			}
+			.reacties
+			{
+				text-align:right;
+				float:right;
+			}
+
+		}
+			
+		
+	}
+	
+}
+
+
+footer
+{
+	background-color: $zwart;
+	clear: both;
+	color:$wit;
+	padding-bottom: 2em;
+	
+	#footer
+	{
+		padding:1.8em 2em 2em ($linksmarge);
+		max-width: 35em;
+		line-height: 1.5em;
+		font-weight: 300;
+	}
+	
+	aside
+	{
+		float:right;
+		width: $rechtsbreedte;	
+		
+		nav
+		{
+			padding:1em 0 0 1em ;
+			display: block;
+			
+			a:link, a:visited, a:hover, a:active
+			{
+				border-width: 0;
+				float:left;
+				padding:0.6em 0 0 0.6em;
+			}
+		}
+		
+	}
+	
+	h2
+	{
+		font-weight: 300;
+	}
+}
+
+#copyright
+{
+	background-color:$zwart;
+	padding:0.5em 0 1em 0;
+	text-align: center;
+	font-size: 0.75em;
+	color: $lichtgrijs;
+}
+
+
+@media screen and (max-width: 950px)
+{
+	body
+	{
+		font-size: 14px;
+		background-size: 100% - $rechtskleinbreedte 100% ;
+		
+		> header
+		{
+			background-position: 1.4em center;
+			padding-left: 2.6em;
+		}
+		
+		> #aside
+		{
+			width: $rechtskleinbreedte;
+		}
+	}
+	
+	#nav
+	{				
+		.nav
+		{
+			margin-left: 0.8em;
+			transition: max-height 0.3s;
+			
+			a:link, a:visited
+			{
+				padding: 0.82em 1.5em;
+			}
+
+		}
+		
+		#searchform
+		{
+			width:$rechtskleinbreedte;
+		}
+	}
+	
+	#content
+	{
+		iframe
+		{
+			height:320px;
+		}
+		width: 100% - $rechtskleinbreedte;
+		
+		article
+		{
+			margin: 0em 2em 2em 2em;
+		}
+		
+		
+	}
+	
+	footer
+	{
+	
+		#aside
+		{
+			width: $rechtskleinbreedte;	
+		}
+	}
+	
+}
+
+@media screen and (max-width: 800px)
+{
+	footer
+	{
+		#footer
+		{
+			padding-left: 2em;
+		}
+		aside
+		{
+			width: auto;
+			padding-right: 2em;
+		}
+	}
+	
+	#nav
+	{
+		position:relative;
+		
+		
+		a#menuknop:link,a#menuknop:visited
+		{
+			display:block;
+			color:white;
+			float:left;
+			margin:0.1em 1.4em 0 1.4em;
+			text-transform: uppercase;
+			width:36px;
+			height:25px;
+			background-image: url('menu.png');
+			background-repeat: no-repeat;
+			opacity: 0.9;
+			padding:0.75em 0 0 3em;
+			font-weight: 600;
+			
+		}
+		a#menuknop:hover,
+		a#menuknop:active
+		{
+			border-width: 0;
+			opacity: 1;
+		}
+		
+		/*
+		a#menuknop:hover + .nav
+		{
+			max-height: 250px;
+		}
+
+		.nav:hover
+		{
+			max-height: 250px;
+			transition: max-height 0.3s ease 0.5s;
+		}*/
+		
+		.nav
+		{
+			max-height: 0;
+
+			overflow: hidden;
+			position:absolute;
+			left:0;
+			top:2.5em;
+			margin-left: 0em;
+			box-shadow: 0 0 10px rgba(0,0,0,0.5);
+			
+			li
+			{
+				display: block;	
+				float:none;
+				background-color: $zwart;
+				
+				a:link, a:visited
+				{
+					float:none;
+				}
+			}
+		}	
+		 
+		#searchform
+		{
+			width:30em;
+			padding-top:0.5em;
+					
+			input[type="text"]
+			{
+				width: 30em;
+			}
+			
+			
+			
+		} 
+		 
+	}
+	
+	#content
+	{
+		padding-top: 1.5em;
+	
+		iframe
+		{
+			height:280px;
+		}
+
+		
+		article
+		{
+			margin: 0 1.5em 1.5em 0;
+			border-radius: 0 0.4em 0.4em 0;
+		}
+	}
+	
+	body
+	{
+	
+		> header
+		{
+			padding-left: 2em;
+		}
+	
+		#aside
+		{
+			
+			> li
+			{
+				padding:1.5em 1em 1em 1.5em;
+			}
+			
+		}
+	}
+		
+}
+
+@media screen and (max-width: 600px)
+{
+ 
+	
+	body
+	{
+		font-size: 16px;
+		
+		#nav
+		{
+			a#menuknop span
+			{
+				display:none;
+			}
+			
+			a#menuknop:link, a#menuknop:visited
+			{
+				margin-right: 0.1em;
+				padding:0.1em;
+			}
+			
+			
+			#searchform
+			{
+				width:13em;
+				padding-right:0.5em;
+						
+				input[type="text"]
+				{
+					width: 10em;
+				}
+				
+			} 
+		}
+		
+	
+		> header
+		{
+			height: 100px;
+			background-size: 80% auto;
+			background-position: 60% 60%;
+		}
+		
+		#content
+		{
+			width:100%;
+			padding-top: 0;
+			
+			iframe
+			{
+				height:310px;
+			}
+
+			
+			article
+			{
+				border-radius: 0.5em;
+				margin:1.5em;
+				padding:1.5em;
+				
+				.footer
+				{
+					
+					.categorieen
+					{
+						width:55%;
+					}
+					.reacties
+					{
+						width:40%;
+					}
+		
+				}
+			
+			}
+		}
+		
+		> #aside
+		{
+			display:block;
+			width:100%;
+			padding-bottom: 2em;
+		}
+		
+		footer
+		{
+			#footer
+			{
+				padding-left: 1.5em;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 360px)
+{
+	body
+	{
+		font-size: 16px;
+	
+		> header
+		{
+			height: 70px;
+			background-position: 60% 75%;
+		}
+	
+		#content
+		{
+			article
+			{
+				border-radius: 0;
+				margin: 1.5em 0;
+				padding:1.5em;
+			}
+			
+			iframe
+			{
+				height: 200px;
+			}
+
+		}
+	}
+		
+
+}
+
+@media screen and (min-width: 1100px)
+{
+	body
+	{
+		font-size: 16px;
+	}
+	
+	#content
+	{
+		iframe
+		{
+			height:380px;
+		}
+
+	}
+}
+
+
+
+@media screen and (min-width: 1300px)
+{
+	body
+	{
+		font-size: 17px;
+	}
+	
+	#content
+	{
+		iframe
+		{
+			height:430px;
+		}
+
+	}
+
+
+}
+
+
+@media screen and (min-width: 1500px)
+{
+	body
+	{
+		font-size: 18px;
+	}
+	
+
+	#content
+	{
+		iframe
+		{
+			height:470px;
+		}
+
+	}
+}
+
+@media screen and (min-width: 1600px)
+{
+	body
+	{
+		font-size: 19px;
+	}
+	
+
+	#content
+	{
+		iframe
+		{
+			height:500px;
+		}
+
+	}
+}
