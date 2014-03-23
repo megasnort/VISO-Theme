@@ -32,7 +32,15 @@
 		</footer>
 		
 		<div id="copyright">
-			<?php echo $options['footertext']; ?>
+			<?php if($options['footertext'] == '')
+			{
+				echo '<a href="http://www.megasnort.com" target="_blank">VISO Theme by megasnort</a>';
+			}
+			else
+			{
+				echo $options['footertext'];
+			}
+			?>
 		</div>
 		
 		<?php wp_footer(); ?>

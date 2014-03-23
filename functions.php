@@ -86,7 +86,7 @@ function twitterurl() {
 }
 
 function footertext() {
-	$options = get_option('theme_options');  echo "<textarea rows=\"4\" cols=\"40\" name='theme_options[footertext]'>{$options['footertext']}</textarea>";
+	$options = get_option('theme_options');  echo "<textarea rows=\"6\" cols=\"60\" name='theme_options[footertext]'>{$options['footertext']}</textarea>";
 }
 
 add_action('admin_menu', 'theme_options_page');
