@@ -341,10 +341,11 @@ body > footer, .push {
 }
 */
 body {
-  background-image: url("images/greenpix.png");
-  background-position: 0 0;
-  background-size: 70% 100%;
-  background-repeat: no-repeat;
+  	/*background-image: url('images/greenpix.png');
+  	background-position: 0 0;
+  	background-size: 100% - $rechtsbreedte 100% ;
+  	background-repeat: no-repeat;
+  */
   font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300; }

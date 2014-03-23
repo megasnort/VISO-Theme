@@ -21,4 +21,30 @@ $(document).ready(function(){
 			$('.nav').css('max-height','0px')
 		}
 	});	
+	
+	resize();
+	$(window).resize(resize);
 });
+
+function resize()
+{
+	if($(window).innerWidth() <= 600)
+	{
+		$('#content').height('auto');
+	}
+	else
+	{
+		var aside = $('#aside').height();
+		var content = $('#content').height();
+		
+		if(aside > content)
+		{
+			$('#content').height(aside);
+		}
+		else
+		{
+			$('#content').height('auto');
+		}		
+	}
+
+}

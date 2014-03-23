@@ -6,6 +6,34 @@
 <?php add_theme_support( 'automatic-feed-links' ); ?>
 <?php add_theme_support( 'post-thumbnails' ); ?>
 <?php
+add_action( 'customize_register', 'hg_customize_register' );
+function hg_customize_register($wp_customize)
+{
+  $colors = array();
+  $colors[] = array( 'slug'=>'navigation_backgroundcolor', 'default' => '#111111', 'label' => __( 'Navigation Background Color', 'VISO Theme' ) );
+  $colors[] = array( 'slug'=>'navigation_textcolor', 'default' => '#FFFFFF', 'label' => __( 'Navigation Text Color', 'VISO Theme' ) );
+  
+  $colors[] = array( 'slug'=>'body_backgroundcolor', 'default' => '#ABC8B8', 'label' => __( 'Body Background Color', 'VISO Theme' ) );
+  $colors[] = array( 'slug'=>'article_backgroundcolor', 'default' => '#FFFFFF', 'label' => __( 'Article Background Color', 'VISO Theme' ) );
+  
+  $colors[] = array( 'slug'=>'sidebar_backgroundcolor', 'default' => '#FFFFFF', 'label' => __( ' Sidebar Background Color', 'VISO Theme' ) );
+  
+  $colors[] = array( 'slug'=>'footer_backgroundcolor', 'default' => '#111111', 'label' => __( 'Footer Background Color', 'VISO Theme' ) );
+  $colors[] = array( 'slug'=>'footer_textcolor', 'default' => '#FFFFFF', 'label' => __( 'Footer Text Color', 'VISO Theme' ) );
+  
+  $colors[] = array( 'slug'=>'title_color', 'default' => '#EE0900', 'label' => __( 'Title Color', 'VISO Theme' ) );
+  $colors[] = array( 'slug'=>'link_color', 'default' => '#EE0900', 'label' => __( 'Link Color', 'VISO Theme' ) );
+
+  foreach($colors as $color)
+  {
+    // SETTINGS
+    $wp_customize->add_setting( $color['slug'], array( 'default' => $color['default'], 'type' => 'option', 'capability' => 'edit_theme_options' ));
+
+    // CONTROLS
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $color['slug'], array( 'label' => $color['label'], 'section' => 'colors', 'settings' => $color['slug'] )));
+  }
+}
+?><?php
 $defaults = array(
 	'default-image'          => get_template_directory_uri() . '/images/logo_viso_gewoon.png',
 	'random-default'         => false,
