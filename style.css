@@ -600,6 +600,16 @@ body {
       #content article .footer .reacties {
         text-align: right;
         float: right; }
+  #content #pagination {
+    margin: -1em 4em 0 4em;
+    padding-bottom: 2.2em;
+    max-width: 44em; }
+    #content #pagination .prev {
+      float: right;
+      padding-right: 4px; }
+    #content #pagination .next {
+      float: left;
+      padding-left: 4px; }
 
 footer {
   background-color: #111111;
@@ -655,6 +665,8 @@ footer {
       height: 320px; }
     #content article {
       margin: 0em 2em 2em 2em; }
+    #content #pagination {
+      margin: -1em 2em 0 2em; }
 
   footer #aside {
     width: 32%; } }
@@ -716,17 +728,19 @@ footer {
         width: 30em; }
 
   #content {
-    padding-top: 1.5em; }
+    padding-top: 2em; }
     #content iframe {
       height: 280px; }
     #content article {
       margin: 0 1.5em 1.5em 0;
       border-radius: 0 0.4em 0.4em 0; }
+    #content #pagination {
+      margin: 0.5em 2em 0.5em 2em; }
 
   body > header {
     padding-left: 2em; }
   body #aside > li {
-    padding: 1.5em 1em 1em 1.5em; } }
+    padding: 1.9em 1em 1em 1.5em; } }
 @media screen and (max-width: 600px) {
   body {
     font-size: 16px; }

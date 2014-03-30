@@ -34,7 +34,11 @@ function resize()
 	}
 	else
 	{
+		//reset
+		$('#content').height('auto');
+		
 		var aside = $('#aside').height();
+		console.log(aside);
 		var content = $('#content').height();
 		
 		if(aside > content)

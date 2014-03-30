@@ -553,6 +553,26 @@ body
 		
 	}
 	
+	#pagination
+	{
+		margin: -1em $linksmarge 0 $linksmarge;
+		padding-bottom: 2.2em;
+		max-width: 44em;
+		
+		.prev
+		{
+			float: right;
+			padding-right:4px;
+		}
+		
+		.next
+		{
+			float: left;	
+			padding-left:4px;
+		}
+
+	}
+	
 }
 
 
@@ -648,18 +668,23 @@ footer
 	
 	#content
 	{
+		width: 100% - $rechtskleinbreedte;
+		
 		iframe
 		{
 			height:320px;
 		}
-		width: 100% - $rechtskleinbreedte;
+		
 		
 		article
 		{
 			margin: 0em 2em 2em 2em;
 		}
 		
-		
+		#pagination
+		{
+			margin: -1em 2em 0 2em;	
+		}
 	}
 	
 	footer
@@ -770,7 +795,7 @@ footer
 	
 	#content
 	{
-		padding-top: 1.5em;
+		padding-top: 2em;
 	
 		iframe
 		{
@@ -783,6 +808,11 @@ footer
 			margin: 0 1.5em 1.5em 0;
 			border-radius: 0 0.4em 0.4em 0;
 		}
+		
+		#pagination
+		{
+			margin: 0.5em 2em 0.5em 2em;	
+		}
 	}
 	
 	body
@@ -794,13 +824,11 @@ footer
 		}
 	
 		#aside
-		{
-			
+		{	
 			> li
 			{
-				padding:1.5em 1em 1em 1.5em;
-			}
-			
+				padding:1.9em 1em 1em 1.5em;
+			}	
 		}
 	}
 		

@@ -35,7 +35,7 @@ function hg_customize_register($wp_customize)
 }
 ?><?php
 $defaults = array(
-	'default-image'          => get_template_directory_uri() . '/images/logo_viso_gewoon.png',
+	//'default-image'          => get_template_directory_uri() . '/images/logo_viso_gewoon.png',
 	'random-default'         => false,
 	'height'                 => 220,
 	'flex-height'            => true,

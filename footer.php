@@ -6,9 +6,15 @@
 				<?php $template_dir = get_template_directory_uri(); ?> 
 				
 				<nav>
-					<a href="https://www.facebook.com/pages/VISO-Mariakerke/99414377560">
-						<img src="<?php echo $template_dir; ?>/images/facebook.png" alt="facebook" />
-					</a>
+					<?php
+						if($options['twitterurl'] != '')
+						{
+							?><a href="<?php echo $options['facebookurl']; ?>">
+								<img src="<?php echo $template_dir; ?>/images/facebook.png" alt="facebook" />
+							</a><?php
+						}
+					?>
+
 					<?php
 						if($options['twitterurl'] != '')
 						{
@@ -34,7 +40,7 @@
 		<div id="copyright">
 			<?php if($options['footertext'] == '')
 			{
-				echo '<a href="http://www.megasnort.com" target="_blank">VISO Theme by megasnort</a>';
+				echo '<a href="http://www.megasnort.com" target="_blank">VISO Theme by Megasnort</a>';
 			}
 			else
 			{
