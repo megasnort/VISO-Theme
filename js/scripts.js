@@ -26,9 +26,11 @@ $(document).ready(function(){
 	$(window).resize(resize);
 });
 
+
 function resize()
 {
-	if($(window).innerWidth() <= 600)
+	//Cheap trick to check if media query is active (innerWidth gives a different result in Webkit)
+	if($('a#menuknop span').css('display') == 'none')
 	{
 		$('#content').height('auto');
 	}
@@ -38,11 +40,13 @@ function resize()
 		$('#content').height('auto');
 		
 		var aside = $('#aside').height();
-		console.log(aside);
 		var content = $('#content').height();
+		
+		console.log(aside + ' - ' + content);
 		
 		if(aside > content)
 		{
+			console.log('pas aan');
 			$('#content').height(aside);
 		}
 		else

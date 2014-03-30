@@ -168,7 +168,51 @@ body
 					font-weight: 600;
 				}
 			}
+		}
+		
+		#wp-calendar
+		{
+			width: 100%;
+			
+			caption
+			{
+				font-weight: 300;
+				color:$rood;
+				font-size: 1.4em;
+				text-transform: uppercase;
+				padding-bottom: 0.5em;
+				text-align: left;
+
+			}
+			
+			th
+			{
+				color:$rood;
+				text-align: right;
+				padding: 3px 5px 3px 0;
+			}
+			
+			td
+			{
+				text-align: right;
+				width: 15%;
+				min-width: 13px;
+				max-width: 40px;
+				padding: 3px 5px 3px 0;
+			}
+			
+			#next
+			{
+				text-align: right;
+			}
 		}	
+	}
+
+	/* Styling for Search widget, disable it, because we have a nice search button in the navigation */
+
+	#search-2
+	{
+		display: none;
 	}
 
 } 
@@ -646,6 +690,7 @@ footer
 		}
 	}
 	
+	
 	#nav
 	{				
 		.nav
@@ -665,6 +710,7 @@ footer
 			width:$rechtskleinbreedte;
 		}
 	}
+	
 	
 	#content
 	{
@@ -916,6 +962,11 @@ footer
 			display:block;
 			width:100%;
 			padding-bottom: 2em;
+			
+			#wp-calendar
+			{
+				width: auto;			
+			}	
 		}
 		
 		footer

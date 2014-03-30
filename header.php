@@ -150,7 +150,8 @@
 			body h2,
 			body h1,
 			#content article h1,
-			#content article h1 a
+			#content article h1 a,
+			body #aside #wp-calendar caption
 			{
 				<?php
 					$title_color = get_option('title_color');

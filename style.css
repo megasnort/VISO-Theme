@@ -348,7 +348,8 @@ body {
   */
   font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
   font-size: 15px;
-  font-weight: 300; }
+  font-weight: 300;
+  /* Styling for Search widget, disable it, because we have a nice search button in the navigation */ }
   body > header {
     /* background: url('images/logo_viso_gewoon.png') no-repeat ($linksmarge - 1.2em) center $wit;*/
     background-repeat: no-repeat;
@@ -394,6 +395,29 @@ body {
           text-indent: -1em; }
         body > #aside > li ul .current-cat a {
           font-weight: 600; }
+    body > #aside #wp-calendar {
+      width: 100%; }
+      body > #aside #wp-calendar caption {
+        font-weight: 300;
+        color: #ee0900;
+        font-size: 1.4em;
+        text-transform: uppercase;
+        padding-bottom: 0.5em;
+        text-align: left; }
+      body > #aside #wp-calendar th {
+        color: #ee0900;
+        text-align: right;
+        padding: 3px 5px 3px 0; }
+      body > #aside #wp-calendar td {
+        text-align: right;
+        width: 15%;
+        min-width: 13px;
+        max-width: 40px;
+        padding: 3px 5px 3px 0; }
+      body > #aside #wp-calendar #next {
+        text-align: right; }
+  body #search-2 {
+    display: none; }
 
 #nav {
   background-color: #111111;
@@ -775,6 +799,8 @@ footer {
       display: block;
       width: 100%;
       padding-bottom: 2em; }
+      body > #aside #wp-calendar {
+        width: auto; }
     body footer #footer {
       padding-left: 1.5em; } }
 @media screen and (max-width: 360px) {
