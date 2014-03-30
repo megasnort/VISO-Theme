@@ -67,7 +67,8 @@
 			}
 			
 			#nav .nav li a:active,
-			#nav .nav li a:hover
+			#nav .nav li a:hover,
+			#nav .nav .children li a:hover
 			{
 				<?php
 					$title_color = get_option('title_color');
@@ -151,7 +152,8 @@
 			body h1,
 			#content article h1,
 			#content article h1 a,
-			body #aside #wp-calendar caption
+			body #aside #wp-calendar caption,
+			body #aside #wp-calendar th
 			{
 				<?php
 					$title_color = get_option('title_color');
@@ -161,7 +163,19 @@
 						echo 'color: '. $title_color .';';
 					}
 				?>
-					
+			}
+			
+			#content article h1 a
+			{
+				<?php
+					$title_color = get_option('title_color');
+						
+					if(valid_color($title_color))
+					{
+						echo 'border-color: '. $title_color .';';
+					}
+				?>
+				
 			}
 			
 			body a:link,
@@ -234,7 +248,7 @@
 	               'show_home'  =>   'Blog',  
 	               'sort_column'    =>   'menu_order',  
 	               'menu_class' =>   'nav',
-				   'depth' =>   '1',
+				   'depth' =>   '2',
 	            ));
 	            
 	            get_search_form();
