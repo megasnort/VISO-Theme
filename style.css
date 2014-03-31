@@ -7,7 +7,11 @@
     Author URI: http://www.megasnort.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Tags: Flat, clean, sober, left-sidebar, responsive
+	Tags: black, green, red, two-columns, fluid-layout, responsive-layout, custom-header, custom-colors, featured-image-header, featured-images, full-width-template
+*/
+/*!
+VISO Theme, Copyright 2014 Megasnort.com
+VISO Theme is distributed under the terms of the GNU GPL
 */
 /*!
 	CSS was written in SASS. Files included in 'sass'-folder
@@ -318,7 +322,8 @@ html[xmlns] .clearfix {
   margin-left: 10px;
   margin-bottom: 10px; }
 
-.size-medium, .size-thumbnail {
+.size-medium,
+.size-thumbnail {
   border: 1px solid #eeeeee;
   padding: 2px;
   cursor: -webkit-zoom-in;
@@ -333,8 +338,7 @@ blockquote {
 body {
   font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
   font-size: 15px;
-  font-weight: 300;
-  /* Styling for Search widget, disable it, because we have a nice search button in the navigation */ }
+  font-weight: 300; }
   body > header {
     /* background: url('images/logo_viso_gewoon.png') no-repeat ($linksmarge - 1.2em) center $wit;*/
     background-repeat: no-repeat;
@@ -403,8 +407,6 @@ body {
         text-align: right; }
       body > #aside #wp-calendar #prev {
         text-align: left; }
-  body #search-2 {
-    display: none; }
 
 #nav {
   background-color: #111111;
@@ -426,22 +428,23 @@ body {
         color: white;
         display: block;
         float: left;
-        padding: 0.82em 1.6em;
+        padding: 0.82em 1.4em;
         text-transform: uppercase; }
       #nav .nav li a:hover, #nav .nav li a:active {
         border-width: 0;
         color: #ee0900; }
     #nav .nav li.current_page_item > a {
       font-weight: 700; }
-    #nav .nav .children {
+    #nav .nav .sub-menu {
       position: absolute;
       top: 2.6em;
       background-color: #111111;
       display: none;
-      width: auto;
+      min-width: 220px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+      #nav .nav .sub-menu li {
+        clear: left; }
   #nav #searchform {
-    width: 30%;
     float: right;
     padding-top: 0.5em; }
     #nav #searchform input[type="text"] {
@@ -451,7 +454,7 @@ body {
       float: left;
       padding: 0.1em 0.1em 0.1em 0.5em;
       margin-left: 3em;
-      width: 60%;
+      width: 13em;
       font-size: 0.8em;
       color: #777; }
     #nav #searchform input[type="text"]:focus {
@@ -466,7 +469,9 @@ body {
       background-color: #ee0900;
       background: url("images/zoek.png") center center no-repeat #ee0900;
       transition: background-color 0.15s;
-      border-width: 0; }
+      border-width: 0;
+      margin-right: 1em;
+      margin-bottom: 0.7em; }
     #nav #searchform input[type="submit"]:hover {
       background-color: #abc8b8; }
 
@@ -477,6 +482,27 @@ body {
   background-color: #abc8b8;
   padding-top: 2em;
   float: left; }
+  #content address, #content abbreviation, #content acronym {
+    line-height: 1.5em; }
+  #content h2 {
+    margin-top: 1em; }
+  #content table {
+    margin: 0.5em; }
+    #content table th {
+      font-weight: bold; }
+    #content table th, #content table td {
+      padding: 0.2em;
+      line-height: 1.5em; }
+  #content dl {
+    padding-top: 0.3em;
+    padding-bottom: 1em; }
+    #content dl dt {
+      font-weight: bold;
+      padding: 0.3em 0 0 0;
+      line-height: 1.5em; }
+    #content dl dd {
+      padding: 0em 0 0.5em 0;
+      line-height: 1.5em; }
   #content iframe {
     width: 100%;
     height: 400px;
@@ -585,9 +611,25 @@ body {
           height: auto; }
     #content article .content {
       padding: 0.2em 0 1.1em 0; }
+      #content article .content ol {
+        list-style-type: decimal; }
+      #content article .content ul {
+        list-style-type: circle; }
+      #content article .content li {
+        list-style-position: inside;
+        text-indent: -1em;
+        margin-left: 1em;
+        margin-bottom: 0.2em;
+        line-height: 1.5em; }
       #content article .content p {
         line-height: 1.5em;
         margin: 0.5em 0 1em 0; }
+      #content article .content .wp-caption {
+        text-align: center;
+        background-color: #eee;
+        padding: 2px; }
+      #content article .content .wp-caption-text {
+        margin: 0.2em 0; }
       #content article .content ul {
         list-style: disc;
         line-height: 1.5em;
@@ -601,6 +643,20 @@ body {
           list-style-position: inside;
           margin-left: 2em; }
           #content article .content ul ul li {
+            text-indent: -1em; }
+      #content article .content ol {
+        list-style: decimal;
+        line-height: 1.5em;
+        list-style-position: inside;
+        margin-left: 2.5em; }
+        #content article .content ol li {
+          text-indent: -1em; }
+        #content article .content ol ol {
+          list-style: decimal;
+          line-height: 1.5em;
+          list-style-position: inside;
+          margin-left: 2em; }
+          #content article .content ol ol li {
             text-indent: -1em; }
       #content article .content h4 {
         color: #ee0900;
@@ -660,6 +716,18 @@ footer {
   font-size: 0.75em;
   color: #aaaaaa; }
 
+.aligncenter {
+  text-align: center; }
+
+.alignleft {
+  text-align: left; }
+
+.alignright {
+  text-align: right; }
+
+.gallery-caption {
+  text-align: right; }
+
 @media screen and (max-width: 950px) {
   body {
     font-size: 14px;
@@ -674,8 +742,8 @@ footer {
     margin-left: 0.8em; }
     #nav .nav a:link, #nav .nav a:visited {
       padding: 0.82em 1.5em; }
-  #nav #searchform {
-    width: 32%; }
+  #nav #searchform input[type="text"] {
+    width: 12em; }
 
   #content {
     width: 68%; }
@@ -727,21 +795,20 @@ footer {
         background-color: #111111; }
         #nav .nav li a:link, #nav .nav li a:visited {
           float: none; }
-      #nav .nav .children {
+      #nav .nav .sub-menu {
         background-color: white;
         color: #111111;
         position: static;
         box-shadow: none; }
-        #nav .nav .children a:link, #nav .nav .children a:visited {
+        #nav .nav .sub-menu a:link, #nav .nav .sub-menu a:visited {
           background-color: white;
           color: #111111; }
-        #nav .nav .children a:hover {
+        #nav .nav .sub-menu a:hover {
           color: #ee0900; }
     #nav #searchform {
-      width: 20.5em;
       padding-top: 0.5em; }
       #nav #searchform input[type="text"] {
-        width: 18em; }
+        width: 15em; }
 
   #content {
     padding-top: 2em; }
@@ -767,10 +834,9 @@ footer {
       padding: 0.1em;
       width: 36px; }
     body #nav #searchform {
-      width: 13em;
       padding-right: 0.5em; }
       body #nav #searchform input[type="text"] {
-        width: 10em; }
+        width: 13em; }
     body > header {
       height: 100px;
       background-size: 80% auto;
@@ -819,13 +885,19 @@ footer {
     font-size: 17px; }
 
   #content iframe {
-    height: 430px; } }
+    height: 430px; }
+
+  #nav #searchform input[type="text"] {
+    width: 13em; } }
 @media screen and (min-width: 1500px) {
   body {
     font-size: 18px; }
 
   #content iframe {
-    height: 470px; } }
+    height: 470px; }
+
+  #nav #searchform input[type="text"] {
+    width: 18em; } }
 @media screen and (min-width: 1600px) {
   body {
     font-size: 19px; }

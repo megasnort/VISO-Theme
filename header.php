@@ -14,7 +14,9 @@
 		 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		
 		<?php $template_dir = get_template_directory_uri(); ?> 
+		
 		<link href="<?php echo $template_dir ?>/images/favicon.ico" rel="shortcut icon" type="image/x-icon" /> 
+		
 		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript" ></script>
 		<script src="<?php echo $template_dir ?>/js/jquery.fancybox.pack.js" type="text/javascript" ></script>
 		<script src="<?php echo $template_dir ?>/js/scripts.js" type="text/javascript" ></script>
@@ -40,7 +42,7 @@
 			{	
 				<?php
 				
-					$navigation_backgroundcolor = get_option('navigation_backgroundcolor');
+					$navigation_backgroundcolor = get_option('viso_navigation_backgroundcolor');
 					
 					if(valid_color($navigation_backgroundcolor))
 					{
@@ -56,7 +58,7 @@
 			{	
 				<?php
 				
-					$navigation_textcolor = get_option('navigation_textcolor');
+					$navigation_textcolor = get_option('viso_navigation_textcolor');
 					
 					if(valid_color($navigation_textcolor))
 					{
@@ -71,7 +73,7 @@
 			#nav .nav .children li a:hover
 			{
 				<?php
-					$title_color = get_option('title_color');
+					$title_color = get_option('viso_title_color');
 						
 					if(valid_color($title_color))
 					{
@@ -84,14 +86,14 @@
 			{	
 				<?php
 				
-					$footer_backgroundcolor = get_option('footer_backgroundcolor');
+					$footer_backgroundcolor = get_option('viso_footer_backgroundcolor');
 					
 					if(valid_color($footer_backgroundcolor))
 					{
 						echo 'background-color: '. $footer_backgroundcolor .';';
 					}
 					
-					$footer_textcolor = get_option('footer_textcolor');
+					$footer_textcolor = get_option('viso_footer_textcolor');
 					
 					if(valid_color($footer_backgroundcolor))
 					{
@@ -105,7 +107,7 @@
 			{	
 				<?php
 				
-					$body_backgroundcolor = get_option('body_backgroundcolor');
+					$body_backgroundcolor = get_option('viso_body_backgroundcolor');
 					
 					if(valid_color($body_backgroundcolor))
 					{
@@ -121,7 +123,7 @@
 			{	
 				<?php
 				
-					$article_backgroundcolor = get_option('article_backgroundcolor');
+					$article_backgroundcolor = get_option('viso_article_backgroundcolor');
 					
 					if(valid_color($article_backgroundcolor))
 					{
@@ -137,7 +139,7 @@
 			{	
 				<?php
 				
-					$sidebar_backgroundcolor = get_option('sidebar_backgroundcolor');
+					$sidebar_backgroundcolor = get_option('viso_sidebar_backgroundcolor');
 					
 					if(valid_color($sidebar_backgroundcolor))
 					{
@@ -156,7 +158,7 @@
 			body #aside #wp-calendar th
 			{
 				<?php
-					$title_color = get_option('title_color');
+					$title_color = get_option('viso_title_color');
 						
 					if(valid_color($title_color))
 					{
@@ -168,7 +170,7 @@
 			#content article h1 a
 			{
 				<?php
-					$title_color = get_option('title_color');
+					$title_color = get_option('viso_title_color');
 						
 					if(valid_color($title_color))
 					{
@@ -182,7 +184,7 @@
 			body a:visited
 			{
 				<?php
-					$link_color = get_option('link_color');
+					$link_color = get_option('viso_link_color');
 						
 					if(valid_color($link_color))
 					{
@@ -196,7 +198,7 @@
 			#nav #searchform input[type="submit"]
 			{
 				<?php
-					$link_color = get_option('link_color');
+					$link_color = get_option('viso_link_color');
 						
 					if(valid_color($link_color))
 					{
@@ -209,7 +211,7 @@
 			{
 				<?php
 				
-					$body_backgroundcolor = get_option('body_backgroundcolor');
+					$body_backgroundcolor = get_option('viso_body_backgroundcolor');
 					
 					if(valid_color($body_backgroundcolor))
 					{
@@ -240,18 +242,40 @@
 
 		<div id="nav" class="clearfix">
 
-			<!-- @todo: wp_nav_menu() -->
 			<a href="#" id="menuknop"><span>MENU</span></a>
 			
-			<?php wp_page_menu(  
-				array(  
-	               'show_home'  =>   'Blog',  
-	               'sort_column'    =>   'menu_order',  
-	               'menu_class' =>   'nav',
-				   'depth' =>   '2',
-	            ));
+			<?php
+				if(has_nav_menu( 'primary' ) )
+				{
+					
+
+					$defaults = array(
+						'theme_location'  => 'primary',
+						'menu'            => '',
+						'container'       => 'li',
+						'container_class' => '',
+						'container_id'    => '',
+						'menu_class'      => 'nav',
+						'menu_id'         => '',
+						'echo'            => true,
+						'fallback_cb'     => 'wp_page_menu',
+						'before'          => '',
+						'after'           => '',
+						'link_before'     => '',
+						'link_after'      => '',
+						'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+						'depth'           => 2,
+						'walker'          => ''
+					);
+				
+					wp_nav_menu($defaults);
+				}
+				else
+				{
+					echo '<em style="color:white; line-height: 2.5em; padding-left:2em;">You need to define a menu in the menu-editor and add it to the default location.</em>';
+				}
 	            
-	            get_search_form();
+				get_search_form();
 			?>
 		</div>
 		

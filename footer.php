@@ -7,18 +7,18 @@
 				
 				<nav>
 					<?php
-						if($options['twitterurl'] != '')
+						if($options['viso_twitterurl'] != '')
 						{
-							?><a href="<?php echo $options['facebookurl']; ?>">
+							?><a href="<?php echo $options['viso_facebookurl']; ?>">
 								<img src="<?php echo $template_dir; ?>/images/facebook.png" alt="facebook" />
 							</a><?php
 						}
 					?>
 
 					<?php
-						if($options['twitterurl'] != '')
+						if($options['viso_twitterurl'] != '')
 						{
-							?><a href="<?php echo $options['twitterurl']; ?>" target="_blank">
+							?><a href="<?php echo $options['viso_twitterurl']; ?>" target="_blank">
 								<img src="<?php echo $template_dir; ?>/images/twitter.png" alt="facebook" />
 							</a><?php
 						}
@@ -38,13 +38,15 @@
 		</footer>
 		
 		<div id="copyright">
-			<?php if($options['footertext'] == '')
+			<?php if($options['viso_footertext'] == '')
 			{
-				echo '<a href="http://www.megasnort.com" target="_blank">VISO Theme by Megasnort</a>';
+				$theme = wp_get_theme();
+				
+				echo '<a href="' . $theme->get('AuthorURI') . '" target="_blank">' . $theme->get( 'Name' ) . ' v' . $theme->get( 'Version' ) . ' by ' . $theme->get( 'Author' ) . '</a>';
 			}
 			else
 			{
-				echo $options['footertext'];
+				echo $options['viso_footertext'];
 			}
 			?>
 		</div>

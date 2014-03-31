@@ -16,11 +16,7 @@
 						<h1>
 							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 							<span>
-								<?php
-									/*
-										echo get_the_date(); ?> om <?php the_time();
-									*/
-									?>
+								<?php echo get_the_date(); ?> om <?php the_time(); ?>
 							</span>
 						</h1>
 					</header>
@@ -92,43 +88,9 @@
 						</div>
 						
 					</nav>
-					<?php
-						if(comments_open())
-						{
-							
-						?>
 
-						<article class="smaller">
-							<header>
-								<h3>
-									<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">Reacties</a>
-								</h3>
-							</header>
-							<section>
-								<ul>
-								<?php
-									$c = get_comments(array('post_id' => get_the_ID()));
-									
-									if(count($c))
-									{
-										wp_list_comments(array(), $c);
-									}
-									else
-									{
-										?><li><div class="comment"><p>Er zijn nog geen reacties.</p></div></li><?php
-									} ?>
-								</ul>
-							</section>
-						</article>
-						<article>
-							<section>
-								<?php comment_form(array('title_reply' 	=> 	__( 'reageer!' ), 'comment_notes_before' 	=> 	'<p class="comment-notes">' . __( '... maar houd het een beetje deftig. Je e-mailadres wordt niet getoond bij de reacties maar wordt enkel gevraagd ter spamcontole.' ) . '</p>')); ?>
-							</section>
-	
-						</article>
-						
-						<?php
-						}
+					<?php comments_template();
+
 					}				
 				}
 				

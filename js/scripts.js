@@ -1,8 +1,8 @@
-var speed = 180;
+var viso_speed = 180;
 
 $(document).ready(function(){
 	
-	//zorgt ervoor dat de afbeeldingen in een fancybox galerij worden geopend per post
+	// Make sure images are openen in a fancybox gallery per post
 	$('#content a[href$=".jpg"], #content a[href$=".jpeg"], #content a[href$=".png"],#content a[href$=".gif"]').each(function()
 	{
 		$(this).attr('rel',$(this).parent().parent().parent().find('a[rel="bookmark"]').attr('title'));
@@ -14,22 +14,22 @@ $(document).ready(function(){
 	
 		e.preventDefault();
 
-		$('.nav').slideToggle(speed);
+		$('.nav').slideToggle(viso_speed);
 
 	});	
 	
-	$('.nav > ul > li.page_item_has_children > a').mouseenter(showMenu);
-	$('.nav > ul > li').mouseleave(hideMenu);
+	$('ul.nav > li.menu-item-has-children > a').mouseenter(viso_showMenu);
+	$('ul.nav > li').mouseleave(viso_hideMenu);
 	
-	$('.nav > ul > li.page_item_has_children > a').click(toggleMenu);
+	$('ul.nav > li.menu-item-has-children > a').click(viso_toggleMenu);
 	
 	$('#content, #aside, header').click(function()
 	{
-		$('.children').slideUp(speed);
+		$('.sub-menu').slideUp(viso_speed);
 		
 		if($('#menuknop').css('display') == 'block')
 		{
-			$('.nav').slideUp(speed);	
+			$('.nav').slideUp(viso_speed);	
 		}
 		
 	});
@@ -38,13 +38,14 @@ $(document).ready(function(){
 	$('a#menuknop span').html($('#nav .current_page_item a').html());
 		
 	
-	resize();
-	$(window).resize(resize);
+	viso_resize();
+	$(window).resize(viso_resize);
 });
 
 
-function toggleMenu(e)
+function viso_toggleMenu(e)
 {
+	console.log('klik');
 	if($(this).next().css('display') == 'none')
 	{
 		e.preventDefault();
@@ -55,23 +56,23 @@ function toggleMenu(e)
 		{
 			if(url != $(this).attr('href'))
 			{
-				$(this).next().slideUp(speed);
+				$(this).next().slideUp(viso_speed);
 			}
 		});
 		
-		$(this).next().slideDown(speed);	
+		$(this).next().slideDown(viso_speed);	
 
 	}
 	else
 	{
-		$(this).next().slideUp(speed);	
+		$(this).next().slideUp(viso_speed);	
 	}
 
 }
 
 
 
-function showMenu()
+function viso_showMenu()
 {
 	
 	if($('#menuknop').css('display') != 'block')
@@ -82,15 +83,11 @@ function showMenu()
 		{
 			if(url != $(this).attr('href'))
 			{
-				$(this).next().slideUp(speed);
-				console.log('slideUp')
-			}
-			else{
-				console.log('skip')
+				$(this).next().slideUp(viso_speed);
 			}
 		});
 		
-		$(this).next().slideDown(speed);	
+		$(this).next().slideDown(viso_speed);	
 	
 	}
 
@@ -98,19 +95,19 @@ function showMenu()
 	
 
 
-function hideMenu()
+function viso_hideMenu()
 {
 	if($('#menuknop').css('display') != 'block')
 	{
 
-		$(this).find('.children').slideUp(speed);	
+		$(this).find('.sub-menu').slideUp(viso_speed);	
 	}
 }
 
 
-function resize()
+function viso_resize()
 {
-	//als het menuknopje zichtbaar is
+	//When the menubutton is visible
 	if($('a#menuknop').css('display') == 'block')
 	{
 		$('.nav').css('display', 'none');
@@ -144,8 +141,5 @@ function resize()
 			$('#content').height('auto');
 		}		
 	}
-	
-	
-	
 
 }

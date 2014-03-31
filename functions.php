@@ -1,4 +1,5 @@
-<?php // register_nav_menu( 'primary', 'Primary Menu' ); ?>
+<?php load_theme_textdomain('text_domain'); ?>
+<?php register_nav_menu( 'primary', 'Main Menu' ); ?>
 <?php if (function_exists('register_sidebar'))  
   register_sidebar(array('name'=>'Side bar'));  
   register_sidebar(array('name'=>'Footer'));  
@@ -6,23 +7,24 @@
 <?php add_theme_support( 'automatic-feed-links' ); ?>
 <?php add_theme_support( 'post-thumbnails' ); ?>
 <?php
-add_action( 'customize_register', 'hg_customize_register' );
-function hg_customize_register($wp_customize)
+add_action( 'customize_register', 'viso_hg_customize_register' );
+
+function viso_hg_customize_register($wp_customize)
 {
   $colors = array();
-  $colors[] = array( 'slug'=>'navigation_backgroundcolor', 'default' => '#111111', 'label' => __( 'Navigation Background Color', 'VISO Theme' ) );
-  $colors[] = array( 'slug'=>'navigation_textcolor', 'default' => '#FFFFFF', 'label' => __( 'Navigation Text Color', 'VISO Theme' ) );
+  $colors[] = array( 'slug'=>'viso_navigation_backgroundcolor', 'default' => '#111111', 'label' => __( 'Navigation Background Color', 'VISO' ) );
+  $colors[] = array( 'slug'=>'viso_navigation_textcolor', 'default' => '#FFFFFF', 'label' => __( 'Navigation Text Color', 'VISO' ) );
   
-  $colors[] = array( 'slug'=>'body_backgroundcolor', 'default' => '#ABC8B8', 'label' => __( 'Body Background Color', 'VISO Theme' ) );
-  $colors[] = array( 'slug'=>'article_backgroundcolor', 'default' => '#FFFFFF', 'label' => __( 'Article Background Color', 'VISO Theme' ) );
+  $colors[] = array( 'slug'=>'viso_body_backgroundcolor', 'default' => '#ABC8B8', 'label' => __( 'Body Background Color', 'VISO' ) );
+  $colors[] = array( 'slug'=>'viso_article_backgroundcolor', 'default' => '#FFFFFF', 'label' => __( 'Article Background Color', 'VISO' ) );
   
-  $colors[] = array( 'slug'=>'sidebar_backgroundcolor', 'default' => '#FFFFFF', 'label' => __( ' Sidebar Background Color', 'VISO Theme' ) );
+  $colors[] = array( 'slug'=>'viso_sidebar_backgroundcolor', 'default' => '#FFFFFF', 'label' => __( ' Sidebar Background Color', 'VISO' ) );
   
-  $colors[] = array( 'slug'=>'footer_backgroundcolor', 'default' => '#111111', 'label' => __( 'Footer Background Color', 'VISO Theme' ) );
-  $colors[] = array( 'slug'=>'footer_textcolor', 'default' => '#FFFFFF', 'label' => __( 'Footer Text Color', 'VISO Theme' ) );
+  $colors[] = array( 'slug'=>'viso_footer_backgroundcolor', 'default' => '#111111', 'label' => __( 'Footer Background Color', 'VISO' ) );
+  $colors[] = array( 'slug'=>'viso_footer_textcolor', 'default' => '#FFFFFF', 'label' => __( 'Footer Text Color', 'VISO' ) );
   
-  $colors[] = array( 'slug'=>'title_color', 'default' => '#EE0900', 'label' => __( 'Title Color', 'VISO Theme' ) );
-  $colors[] = array( 'slug'=>'link_color', 'default' => '#EE0900', 'label' => __( 'Link Color', 'VISO Theme' ) );
+  $colors[] = array( 'slug'=>'viso_title_color', 'default' => '#EE0900', 'label' => __( 'Title Color', 'VISO' ) );
+  $colors[] = array( 'slug'=>'viso_link_color', 'default' => '#EE0900', 'label' => __( 'Link Color', 'VISO' ) );
 
   foreach($colors as $color)
   {
@@ -33,9 +35,21 @@ function hg_customize_register($wp_customize)
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $color['slug'], array( 'label' => $color['label'], 'section' => 'colors', 'settings' => $color['slug'] )));
   }
 }
+
+function unregister_default_wp_widgets()
+{
+	unregister_widget('WP_Widget_Search');
+	unregister_widget('WP_Nav_Menu_Widget');
+}
+
+
+add_action('widgets_init', 'unregister_default_wp_widgets', 1);
+
+
+
+
 ?><?php
 $defaults = array(
-	//'default-image'          => get_template_directory_uri() . '/images/logo_viso_gewoon.png',
 	'random-default'         => false,
 	'height'                 => 220,
 	'flex-height'            => true,
@@ -46,10 +60,10 @@ $defaults = array(
 );
 
 add_theme_support('custom-header', $defaults); ?>
-<?php function build_options_page() { ?>
+<?php function viso_build_options_page() { ?>
 <div id="theme-options-wrap">
 	<div class="icon32" id="icon-tools"> <br /> </div>
-	<h2>VISO Theme Settings</h2>
+	<h2>VISO Settings</h2>
 	<p></p>
 	<form method="post" action="options.php" enctype="multipart/form-data">
 		<?php settings_fields('theme_options'); ?>
@@ -60,38 +74,41 @@ add_theme_support('custom-header', $defaults); ?>
 	</form>
 </div>
 <?php }
-add_action('admin_init', 'register_and_build_fields');
+add_action('admin_init', 'viso_register_and_build_fields');
 
-function register_and_build_fields() {
-	register_setting('theme_options', 'theme_options', 'validate_setting');
+function viso_register_and_build_fields() {
+	register_setting('theme_options', 'theme_options', 'viso_validate_setting');
 
 	add_settings_section('footer_settings', 'Footer Settings', 'section_footer', __FILE__);
 
 	function section_footer() {}
 	
-	add_settings_field('facebookurl', 'Facebook URL', 'facebookurl', __FILE__, 'footer_settings');
-	add_settings_field('twitterurl', 'Twitter URL', 'twitterurl', __FILE__, 'footer_settings');
-	add_settings_field('footertext', 'Footer text', 'footertext', __FILE__, 'footer_settings');
+	add_settings_field('viso_facebookurl', 'Facebook URL', 'viso_facebookurl', __FILE__, 'footer_settings');
+	add_settings_field('viso_twitterurl', 'Twitter URL', 'viso_twitterurl', __FILE__, 'footer_settings');
+	add_settings_field('viso_footertext', 'Footer text', 'viso_footertext', __FILE__, 'footer_settings');
 }
-function validate_setting($theme_options) {
+function viso_validate_setting($theme_options) {
 	return $theme_options;
 }
 
-function facebookurl() {
-	$options = get_option('theme_options');  echo "<input name='theme_options[facebookurl]' type='text' value='{$options['facebookurl']}' />";
+function viso_facebookurl() {
+	$options = get_option('theme_options');
+	echo "<input name='theme_options[viso_facebookurl]' type='text' value='{$options['viso_facebookurl']}' />";
 }
 
-function twitterurl() {
-	$options = get_option('theme_options');  echo "<input name='theme_options[twitterurl]' type='text' value='{$options['twitterurl']}' />";
+function viso_twitterurl() {
+	$options = get_option('theme_options');
+	echo "<input name='theme_options[viso_twitterurl]' type='text' value='{$options['viso_twitterurl']}' />";
 }
 
-function footertext() {
-	$options = get_option('theme_options');  echo "<textarea rows=\"6\" cols=\"60\" name='theme_options[footertext]'>{$options['footertext']}</textarea>";
+function viso_footertext() {
+	$options = get_option('theme_options');
+	echo "<textarea rows=\"6\" cols=\"60\" name='theme_options[viso_footertext]'>{$options['viso_footertext']}</textarea>";
 }
 
-add_action('admin_menu', 'theme_options_page');
+add_action('admin_menu', 'viso_theme_options_page');
 
-function theme_options_page() {
-	add_options_page('VISO Theme', 'VISO Theme', 'administrator', __FILE__, 'build_options_page');
+function viso_theme_options_page() {
+	add_options_page('VISO', 'VISO', 'administrator', __FILE__, 'viso_build_options_page');
 }
 ?>
