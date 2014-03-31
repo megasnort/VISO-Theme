@@ -99,6 +99,22 @@ blockquote {
   border-left: 1px solid #CCC;
   padding: 1em; }
 
+strike {
+  text-decoration: line-through; }
+
+abbr, acronym {
+  border-bottom: 1px solid #111111;
+  line-height: 1.5em; }
+
+address {
+  line-height: 1.5em; }
+
+em, i {
+  font-style: italic; }
+
+strong, b {
+  font-weight: 700; }
+
 body {
   font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
   font-size: 15px;
@@ -246,8 +262,6 @@ body {
   background-color: #abc8b8;
   padding-top: 2em;
   float: left; }
-  #content address, #content abbreviation, #content acronym {
-    line-height: 1.5em; }
   #content h2 {
     margin-top: 1em; }
   #content table {
@@ -310,8 +324,6 @@ body {
     padding: 2em;
     border-radius: 0.4em;
     max-width: 40em; }
-    #content article strong {
-      font-weight: 700; }
     #content article h1 {
       margin-bottom: 0.5em;
       border-bottom: 1px solid #eeeeee;

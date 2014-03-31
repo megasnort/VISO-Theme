@@ -1,4 +1,4 @@
-		<?php $options = get_option('theme_options'); ?>
+<?php $options = get_option('theme_options'); ?>
 		<footer>
 			
 			<aside>

@@ -80,12 +80,20 @@ function viso_register_and_build_fields() {
 	register_setting('theme_options', 'theme_options', 'viso_validate_setting');
 
 	add_settings_section('footer_settings', 'Footer Settings', 'section_footer', __FILE__);
+	add_settings_section('language_settings', 'Language Settings', 'section_language', __FILE__);
 
 	function section_footer() {}
+	function section_language() {}
 	
 	add_settings_field('viso_facebookurl', 'Facebook URL', 'viso_facebookurl', __FILE__, 'footer_settings');
 	add_settings_field('viso_twitterurl', 'Twitter URL', 'viso_twitterurl', __FILE__, 'footer_settings');
 	add_settings_field('viso_footertext', 'Footer text', 'viso_footertext', __FILE__, 'footer_settings');
+	
+	add_settings_field('viso_comments', 'Comments', 'viso_comments', __FILE__, 'language_settings');
+	add_settings_field('viso_comment', 'Comment', 'viso_comment', __FILE__, 'language_settings');
+	add_settings_field('viso_nocomment', 'No comments yet', 'viso_nocomment', __FILE__, 'language_settings');
+
+	
 }
 function viso_validate_setting($theme_options) {
 	return $theme_options;
@@ -106,9 +114,26 @@ function viso_footertext() {
 	echo "<textarea rows=\"6\" cols=\"60\" name='theme_options[viso_footertext]'>{$options['viso_footertext']}</textarea>";
 }
 
+function viso_comments() {
+	$options = get_option('theme_options');
+	echo "<input name='theme_options[viso_comments]' type='text' value='{$options['viso_comments']}' />";
+}
+
+function viso_comment() {
+	$options = get_option('theme_options');
+	echo "<input name='theme_options[viso_comment]' type='text' value='{$options['viso_comment']}' />";
+}
+
+function viso_nocomment() {
+	$options = get_option('theme_options');
+	echo "<input name='theme_options[viso_nocomment]' type='text' value='{$options['viso_nocomment']}' />";
+}
+
 add_action('admin_menu', 'viso_theme_options_page');
 
 function viso_theme_options_page() {
 	add_options_page('VISO', 'VISO', 'administrator', __FILE__, 'viso_build_options_page');
 }
+
+
 ?>

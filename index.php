@@ -1,6 +1,6 @@
 	
 		<?php get_header(); ?>
-
+		<?php $options = get_option('theme_options'); ?>
 		<?php
 		
 		if ( have_posts() )
@@ -45,7 +45,7 @@
 						</div>
 						
 						<div class="reacties">
-							<?php if(!is_singular() && comments_open()){ comments_popup_link('Nog geen reacties »', '1 reactie »', '% reacties »'); } ?>
+							<?php if(!is_singular() && comments_open()){ comments_popup_link((($options['viso_nocomment'] == '') ? 'No comments yet' : $options['viso_nocomment'] ). ' »', '1 ' .(($options['viso_comment'] == '') ? 'comment' : $options['viso_comment'] ). ' »', '% ' .(($options['viso_comments'] == '') ? 'comments' : $options['viso_comments'] ). ' »'); } ?>
 						</div>	
 				
 					</section>

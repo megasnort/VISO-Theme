@@ -73,6 +73,32 @@ blockquote
 	padding: 1em;
 }
 
+strike
+{
+	text-decoration: line-through;
+}
+
+abbr, acronym
+{
+	border-bottom: 1px solid $zwart;
+	line-height: 1.5em;
+}
+
+address
+{
+	line-height: 1.5em;	
+}
+
+em, i
+{
+	font-style: italic;
+}
+
+strong, b
+{
+	font-weight: 700;
+}
+
 
 body
 { 
@@ -329,11 +355,7 @@ body
 	padding-top: 2em;
 	float:left;
 
-	address, abbreviation, acronym
-	{
-		line-height: 1.5em;
-	}
-
+	
 	
 	h2
 	{
@@ -463,10 +485,6 @@ body
 		border-radius: 0.4em;
 		max-width: 40em;
 		
-		strong
-		{
-			font-weight: 700;
-		}
 		
 		h1
 		{
