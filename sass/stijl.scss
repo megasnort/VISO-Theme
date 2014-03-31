@@ -1,5 +1,5 @@
 /*! 
-    Theme Name: VISO Theme
+    Theme Name: VISO
     Theme URI:  http://www.viso.be
     Description: Theme using the colors of VISO, a school in Ghent
     Version: 0.1
@@ -99,6 +99,20 @@ strong, b
 	font-weight: 700;
 }
 
+
+.sticky
+{
+	h2
+	{
+		font-weight: bold;	
+	}
+}
+
+.bypostauthor
+{
+	background-color: #eee;
+	background-color: rgba(255,255,255,0.1);
+}
 
 body
 { 
@@ -484,7 +498,7 @@ body
 		padding: 2em;
 		border-radius: 0.4em;
 		max-width: 40em;
-		
+		overflow: hidden;
 		
 		h1
 		{
@@ -731,6 +745,17 @@ body
 			{
 				float:left;
 			}
+			
+			.tags
+			{
+				float:left;
+				clear: left;
+				
+				a:before
+				{
+					content: '#';
+				}
+			}
 			.reacties
 			{
 				text-align:right;
@@ -965,7 +990,7 @@ footer
 			margin:0.1em 1.4em 0 1.4em;
 			text-transform: uppercase;
 			height:25px;
-			background-image: url('menu.png');
+			background-image: url('images/menu.png');
 			background-repeat: no-repeat;
 			opacity: 0.9;
 			padding:0.75em 0 0 3em;

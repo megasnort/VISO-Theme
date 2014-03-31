@@ -14,19 +14,15 @@
 		<link href='<?php echo get_stylesheet_uri(); ?>' rel='stylesheet' type='text/css'>
 		<link href='<?php echo $template_dir ?>/css/jquery.fancybox.css' rel='stylesheet' type='text/css'>
 		
-		 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-		
-
-		
-		<link href="<?php echo $template_dir ?>/images/favicon.ico" rel="shortcut icon" type="image/x-icon" /> 
-		
+		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+				
 		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript" ></script>
 		<script src="<?php echo $template_dir ?>/js/jquery.fancybox.pack.js" type="text/javascript" ></script>
 		<script src="<?php echo $template_dir ?>/js/scripts.js" type="text/javascript" ></script>
 	
 		<!-- IE < 9 ondersteunt de nieuwe HTML5-tags niet. Met onderstaande scriptje wel. -->
 		<!--[if lt IE 9]>
-		<script src="<?php bloginfo('template_directory'); ?>/js/ie.js" type="text/javascript" ></script>
+		<script src="<?php $template_dir; ?>/js/ie.js" type="text/javascript" ></script>
 		<![endif]-->
 		<?php wp_head(); ?>
 		
@@ -226,7 +222,7 @@
 		
 		</style>
 	</head> 
-	<body>
+	<body <?php body_class($class); ?>>
 
 		<header style="background-image:url('<?php header_image(); ?>');">
 			

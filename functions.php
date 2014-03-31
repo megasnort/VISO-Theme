@@ -131,8 +131,10 @@ function viso_nocomment() {
 
 add_action('admin_menu', 'viso_theme_options_page');
 
-function viso_theme_options_page() {
-	add_options_page('VISO', 'VISO', 'administrator', __FILE__, 'viso_build_options_page');
+
+function viso_theme_options_page()
+{
+	add_theme_page('VISO', 'VISO', 'administrator', __FILE__, 'viso_build_options_page');
 }
 
 
