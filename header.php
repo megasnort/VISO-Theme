@@ -8,12 +8,15 @@
 		
 		<title><?php bloginfo('name') . wp_title(); ?></title> 
 
+		<?php $template_dir = get_template_directory_uri(); ?> 
+
 		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,300italic,700' rel='stylesheet' type='text/css'>
 		<link href='<?php echo get_stylesheet_uri(); ?>' rel='stylesheet' type='text/css'>
+		<link href='<?php echo $template_dir ?>/css/jquery.fancybox.css' rel='stylesheet' type='text/css'>
 		
 		 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		
-		<?php $template_dir = get_template_directory_uri(); ?> 
+
 		
 		<link href="<?php echo $template_dir ?>/images/favicon.ico" rel="shortcut icon" type="image/x-icon" /> 
 		

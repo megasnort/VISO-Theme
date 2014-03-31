@@ -19,10 +19,9 @@ VISO Theme is distributed under the terms of the GNU GPL
 	CSS was written in SASS. Files included in 'sass'-folder
 */
 
-// Use imports so we have just one .css = -3 requests
+// Use imports so we have just one .css = -2 requests
 @import 'reset';
 @import 'clearfix';
-@import 'jquery.fancybox';
 
 $wit: #FFF;
 $zwart: #111;
