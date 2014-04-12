@@ -50,7 +50,7 @@
 
 						
 						<div class="reacties">
-							<?php if(comments_open()){ comments_popup_link((($options['viso_nocomment'] == '') ? 'No comments yet' : $options['viso_nocomment'] ). ' »', '1 ' .(($options['viso_comment'] == '') ? 'comment' : $options['viso_comment'] ). ' »', '% ' .(($options['viso_comments'] == '') ? 'comments' : $options['viso_comments'] ). ' »'); } ?>
+							<?php if(!is_singular() && comments_open()){ comments_popup_link((($options['viso_nocomment'] == '') ? 'No comments yet' : $options['viso_nocomment'] ). ' »', '1 ' .(($options['viso_comment'] == '') ? 'comment' : $options['viso_comment'] ). ' »', '% ' .(($options['viso_comments'] == '') ? 'comments' : $options['viso_comments'] ). ' »'); } ?>
 						</div>	
 						<?php paginate_comments_links(); ?>
 					</section>
