@@ -215,25 +215,21 @@
 			}
 			
 					
-			header
+			body > header
 			{
 				<?php
-
-				$header_image = header_image();
-				
-				if($header_image != '')
-				{
-					echo 'background-image:url(\'' . $header_image . '\');"';	
-				}
+					echo 'background-image:url(\'';
+					echo header_image();
+					echo '\');';	
 				
 				?>
 			
 			}
 			
-			header h1 a:link, 
-			header h1 a:visited,
-			header h1 a:active, 
-			header h1 a:hover 
+			body > header h1 a:link, 
+			body > body header h1 a:visited,
+			body > header h1 a:active, 
+			body > header h1 a:hover 
 			{
 				<?php
 
