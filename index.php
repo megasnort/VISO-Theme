@@ -58,7 +58,7 @@
 				
 				<?php
 				
-				if( is_single() || is_singular() )
+				if(is_singular() )
 				{
 					?>
 					<nav id="pagination">
