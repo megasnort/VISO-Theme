@@ -1,6 +1,6 @@
-/*! 
+/*
     Theme Name: VISO
-    Theme URI:  http://www.viso.be
+    Theme URI:  https://github.com/megasnort/VISO-Theme
     Description: Theme using the colors of VISO, a school in Ghent
     Version: 0.1
     Author: Stef Bastiaansen
@@ -10,12 +10,12 @@
 	Tags: black, green, red, two-columns, fluid-layout, responsive-layout, custom-header, custom-colors, featured-image-header, featured-images, full-width-template
 */  
 
-/*!
+/*
 VISO Theme, Copyright 2014 Megasnort.com
 VISO Theme is distributed under the terms of the GNU GPL
 */
 
-/*!
+/*
 	CSS was written in SASS. Files included in 'sass'-folder
 */
 
@@ -114,6 +114,15 @@ strong, b
 	background-color: rgba(255,255,255,0.1);
 }
 
+
+.navError
+{
+	color:white;
+	line-height: 2.5em;
+	padding-left:2em;
+}
+
+
 body
 { 
 
@@ -156,7 +165,6 @@ body
 		font-weight: 300;
 		color:$rood;
 		font-size: 1.4em;
-		text-transform: uppercase;
 		padding-bottom: 0.5em;
 	}
 	
@@ -165,7 +173,6 @@ body
 		font-weight: 300;
 		color:$rood;
 		font-size: 1.3em;
-		text-transform: uppercase;
 		padding-bottom: 0.5em;
 	}
 	
@@ -207,7 +214,6 @@ body
 				font-weight: 300;
 				color:$rood;
 				font-size: 1.4em;
-				text-transform: uppercase;
 				padding-bottom: 0.5em;
 				text-align: left;
 
@@ -275,7 +281,6 @@ body
 				display: block;
 				float:left;
 				padding: 0.82em 1.4em;
-				text-transform: uppercase;
 			}
 			
 			a:hover, a:active
@@ -312,53 +317,69 @@ body
 		}
 	}
 	
-	#searchform
+	
+}
+
+.searchform
+{
+	float:right;
+
+	padding-top:0.5em;
+			
+	input[type="text"]
 	{
-		float:right;
+		height: 1.8em;
+		border-radius: 0.4em 0 0 0.4em ;
+		border: $wit 0 solid;
+		float:left;
+		padding:0.1em 0.1em 0.1em 0.5em;
+		margin-left: 3em;
+		width: 13em;
+		font-size: 0.8em;
+		color:#777;
+	}
+	
+	input[type="text"]:focus
+	{
+		color:$zwart;
+	}
 
-		padding-top:0.5em;
-				
-		input[type="text"]
-		{
-			height: 1.8em;
-			border-radius: 0.5em 0 0 0.5em ;
-			border: $wit 0 solid;
-			float:left;
-			padding:0.1em 0.1em 0.1em 0.5em;
-			margin-left: 3em;
-			width: 13em;
-			font-size: 0.8em;
-			color:#777;
-		}
-		
-		input[type="text"]:focus
-		{
-			color:$zwart;
-		}
-
-		
-		input[type="submit"]
-		{
-			font-size: 0.8em;
-			float:left;
-			display: block;
-			height: 2em;
-			width: 2.5em;
-			border-radius: 0 0.5em 0.5em 0 ;
-			background-color: $rood;
-			background:url('images/zoek.png') center center no-repeat $rood ;
-			transition: background-color 0.15s;
-			border-width: 0;
-			margin-right: 1em;
-			margin-bottom: 0.7em;
-		}
-		
-		input[type="submit"]:hover
-		{
-			background-color: $groen;
-		}
+	
+	input[type="submit"]
+	{
+		font-size: 0.8em;
+		float:left;
+		display: block;
+		height: 2em;
+		width: 2.5em;
+		border-radius: 0 0.4em 0.4em 0 ;
+		background-color: $rood;
+		background:url('images/zoek.png') center center no-repeat $rood ;
+		transition: background-color 0.15s;
+		border-width: 0;
+		margin-right: 1em;
+		margin-bottom: 0.7em;
+	}
+	
+	input[type="submit"]:hover
+	{
+		background-color: $groen;
 	}
 }
+
+#content .searchform
+{
+	float:left;
+}
+
+#content .searchform input[type="text"]
+{
+	background-color: #DDD;
+	margin-left: 0;
+}
+
+
+
 
 #content
 {
@@ -496,7 +517,7 @@ body
 		background-color:$wit;
 		margin: 0em $linksmarge 2em ($linksmarge);
 		padding: 2em;
-		border-radius: 0.4em;
+		border-radius: 0.3em;
 		max-width: 40em;
 		overflow: hidden;
 		
@@ -510,7 +531,6 @@ body
 			{
 				color:$rood;
 				font-size: 2em;
-				text-transform: uppercase;
 				margin-right:0.4em;
 			} 
 			
@@ -727,7 +747,6 @@ body
 			{
 				color:$rood;
 				font-weight: 300;
-				text-transform: uppercase;
 				font-size: 1.2em;
 				margin:1.8em 0 0.5em 0;
 			}
@@ -909,19 +928,21 @@ footer
 
 		}
 		
-		#searchform
-		{
-					
-			input[type="text"]
-			{
-				width: 12em;
-			}
-			
-			
-		} 
+		
 
 		
 	}
+	
+	.searchform
+	{
+				
+		input[type="text"]
+		{
+			width: 12em;
+		}
+		
+		
+	} 
 	
 	
 	#content
@@ -988,7 +1009,6 @@ footer
 			color:white;
 			float:left;
 			margin:0.1em 1.4em 0 1.4em;
-			text-transform: uppercase;
 			height:25px;
 			background-image: url('images/menu.png');
 			background-repeat: no-repeat;
@@ -1049,20 +1069,22 @@ footer
 
 		}	
 		 
-		#searchform
-		{
-			padding-top:0.5em;
-					
-			input[type="text"]
-			{
-				width: 15em;
-			}
-			
-			
-			
-		} 
+		
 		 
 	}
+	
+	.searchform
+	{
+		padding-top:0.5em;
+				
+		input[type="text"]
+		{
+			width: 15em;
+		}
+		
+		
+		
+	} 
 	
 	#content
 	{
@@ -1077,7 +1099,7 @@ footer
 		article
 		{
 			margin: 0 1.5em 1.5em 0;
-			border-radius: 0 0.4em 0.4em 0;
+			border-radius: 0 0.3em 0.3em 0;
 		}
 		
 		
@@ -1133,20 +1155,22 @@ footer
 			}
 			
 			
-			#searchform
+			
+			
+			
+
+			
+		}
+		
+		.searchform
+		{
+
+			padding-right:0.5em;
+					
+			input[type="text"]
 			{
-
-				padding-right:0.5em;
-						
-				input[type="text"]
-				{
-					width: 13em;
-				}
-				
+				width: 13em;
 			}
-			
-			
-
 			
 		}
 		
@@ -1171,7 +1195,7 @@ footer
 			
 			article
 			{
-				border-radius: 0.5em;
+				border-radius: 0.4em;
 				margin:1.5em;
 				padding:1.5em;
 				
@@ -1284,17 +1308,20 @@ footer
 	
 	#nav
 	{
-		#searchform
-		{
-					
-			input[type="text"]
-			{
-				width: 13em;
-			}
-			
-			
-		} 
+	
 	}
+	
+	.searchform
+	{
+				
+		input[type="text"]
+		{
+			width: 13em;
+		}
+		
+		
+	} 
+
 
 
 }
@@ -1317,19 +1344,16 @@ footer
 
 	}
 	
-	#nav
+	.searchform
 	{
-		#searchform
+				
+		input[type="text"]
 		{
-					
-			input[type="text"]
-			{
-				width: 18em;
-			}
-			
-			
-		} 
-	}
+			width: 18em;
+		}
+		
+		
+	} 
 }
 
 @media screen and (min-width: 1600px)

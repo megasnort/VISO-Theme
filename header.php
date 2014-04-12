@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>> 
 	<head> 
 		<meta charset="<?php bloginfo('charset'); ?>"> 
-		<meta name="author" content="Stef B." /> 
+
 		<meta name="description" content="<?php esc_attr(bloginfo('description')); ?>" /> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
@@ -10,24 +10,18 @@
 
 		<?php $template_dir = get_template_directory_uri(); ?> 
 
-		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,300italic,700' rel='stylesheet' type='text/css'>
+
 		<link href='<?php echo get_stylesheet_uri(); ?>' rel='stylesheet' type='text/css'>
-		<link href='<?php echo $template_dir ?>/css/jquery.fancybox.css' rel='stylesheet' type='text/css'>
-		
+
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 				
-		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript" ></script>
-		<script src="<?php echo $template_dir ?>/js/jquery.fancybox.pack.js" type="text/javascript" ></script>
-		<script src="<?php echo $template_dir ?>/js/scripts.js" type="text/javascript" ></script>
-	
-		<!-- IE < 9 ondersteunt de nieuwe HTML5-tags niet. Met onderstaande scriptje wel. -->
 		<!--[if lt IE 9]>
 		<script src="<?php $template_dir; ?>/js/ie.js" type="text/javascript" ></script>
 		<![endif]-->
 		<?php wp_head(); ?>
 		
 		<style type="text/css">
-		
+				
 			<?php
 
 				function valid_color($str)
@@ -194,7 +188,7 @@
 					
 			}
 			
-			#nav #searchform input[type="submit"]
+			.searchform input[type="submit"]
 			{
 				<?php
 					$link_color = get_option('viso_link_color');
@@ -206,7 +200,7 @@
 				?>
 			}
 			
-			#nav #searchform input[type="submit"]:hover
+			.searchform input[type="submit"]:hover
 			{
 				<?php
 				
@@ -219,19 +213,77 @@
 				
 				?>
 			}
+			
+					
+			header
+			{
+				<?php
+
+				$header_image = header_image();
+				
+				if($header_image != '')
+				{
+					echo 'background-image:url(\'' . $header_image . '\');"';	
+				}
+				
+				?>
+			
+			}
+			
+			header h1 a:link, 
+			header h1 a:visited,
+			header h1 a:active, 
+			header h1 a:hover 
+			{
+				<?php
+
+				$header_textcolor = '#' . get_header_textcolor();
+				
+				if(valid_color($header_textcolor))
+				{
+					echo 'color:' . $header_textcolor . ';';	
+					echo 'border-color:' . $header_textcolor . ';';	
+				}
+				
+				?>
+			}
+
+
+			h1,
+			h2,
+			h3,
+			h4,
+			#wp-calendar caption,
+			#nav .nav li a,
+			#nav a#menuknop
+			{
+				<?php
+				
+				$options = get_option('theme_options');
+				
+				if($options['viso_uppercase'] == 'on')
+				{
+					echo 'text-transform: uppercase;';
+				}
+				
+				?>
+			
+			}
+			
 		
 		</style>
 	</head> 
-	<body <?php body_class($class); ?>>
+	<body <?php body_class(); ?>>
 
-		<header style="background-image:url('<?php header_image(); ?>');">
+		<header>
 			
 			<?php
-				if(get_header_textcolor()!='blank')
+				if(get_header_textcolor() != 'blank')
 				{
-					echo '<h1 style="color:#' . get_header_textcolor() .'">';
+					echo '<h1>';
+					echo '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home">';
 					echo bloginfo('name');
-					echo '</h1><h4>';
+					echo '</a></h1><h4>';
 					echo bloginfo('description');
 					echo '</h4>';
 				}	
@@ -271,7 +323,7 @@
 				}
 				else
 				{
-					echo '<em style="color:white; line-height: 2.5em; padding-left:2em;">You need to define a menu in the menu-editor and add it to the default location.</em>';
+					echo '<em class="navError">You need to define a menu in the menu-editor and add it to the default location.</em>';
 				}
 	            
 				get_search_form();

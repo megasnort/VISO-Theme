@@ -8,6 +8,21 @@
 <?php add_theme_support( 'post-thumbnails' ); ?>
 <?php
 add_action( 'customize_register', 'viso_hg_customize_register' );
+add_action( 'wp_enqueue_scripts', 'add_extra_stylesheets_and_scripts' );
+
+
+function add_extra_stylesheets_and_scripts() {
+ 
+   wp_enqueue_style( 'Fancybox', get_template_directory_uri() . '/css/jquery.fancybox.css');
+   wp_enqueue_style( 'Google Font', 'http://fonts.googleapis.com/css?family=Lato:100,300,300italic,700');
+
+   wp_enqueue_script( 'jquery');      
+   wp_enqueue_script( 'Fancybox', get_template_directory_uri() . '/js/jquery.fancybox.pack.js');   
+   wp_enqueue_script( 'VISO-scripts', get_template_directory_uri() . '/js/scripts.js');   
+
+
+}
+
 
 function viso_hg_customize_register($wp_customize)
 {
@@ -33,7 +48,10 @@ function viso_hg_customize_register($wp_customize)
 
     // CONTROLS
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $color['slug'], array( 'label' => $color['label'], 'section' => 'colors', 'settings' => $color['slug'] )));
+    
   }
+  
+
 }
 
 function unregister_default_wp_widgets()
@@ -81,9 +99,11 @@ function viso_register_and_build_fields() {
 
 	add_settings_section('footer_settings', 'Footer Settings', 'section_footer', __FILE__);
 	add_settings_section('language_settings', 'Language Settings', 'section_language', __FILE__);
+	add_settings_section('layout_settings', 'Layout Settings', 'section_layout', __FILE__);
 
 	function section_footer() {}
 	function section_language() {}
+	function section_layout() {}
 	
 	add_settings_field('viso_facebookurl', 'Facebook URL', 'viso_facebookurl', __FILE__, 'footer_settings');
 	add_settings_field('viso_twitterurl', 'Twitter URL', 'viso_twitterurl', __FILE__, 'footer_settings');
@@ -92,11 +112,25 @@ function viso_register_and_build_fields() {
 	add_settings_field('viso_comments', 'Comments', 'viso_comments', __FILE__, 'language_settings');
 	add_settings_field('viso_comment', 'Comment', 'viso_comment', __FILE__, 'language_settings');
 	add_settings_field('viso_nocomment', 'No comments yet', 'viso_nocomment', __FILE__, 'language_settings');
+	
+	add_settings_field('viso_uppercase', 'Uppercase titles', 'viso_uppercase', __FILE__, 'layout_settings');
 
 	
 }
 function viso_validate_setting($theme_options) {
 	return $theme_options;
+}
+
+function viso_uppercase() {
+	$options = get_option('theme_options');
+	echo "<input name='theme_options[viso_uppercase]' type=\"checkbox\"";
+	
+	if($options['viso_uppercase'] == 'on')
+	{
+		echo ' checked="checked"';
+	}
+	
+	echo " />";
 }
 
 function viso_facebookurl() {

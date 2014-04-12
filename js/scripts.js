@@ -1,8 +1,10 @@
 var viso_speed = 180;
 
+jQuery(document).ready(function($) {
+
 $(document).ready(function(){
 	
-	// Make sure images are openen in a fancybox gallery per post
+	// Make sure images are opened in a fancybox gallery per post
 	$('#content a[href$=".jpg"], #content a[href$=".jpeg"], #content a[href$=".png"],#content a[href$=".gif"]').each(function()
 	{
 		$(this).attr('rel',$(this).parent().parent().parent().find('a[rel="bookmark"]').attr('title'));
@@ -107,7 +109,7 @@ function viso_hideMenu()
 
 function viso_resize()
 {
-	//When the menubutton is visible
+	//When the menu-button is visible
 	if($('a#menuknop').css('display') == 'block')
 	{
 		$('.nav').css('display', 'none');
@@ -118,7 +120,6 @@ function viso_resize()
 	}
 		
 	//Cheap trick to check if media query is active (innerWidth gives a different result in Webkit)
-	//als het woord 'menu' onzichtbaar is
 
 	if($('a#menuknop span').css('display') == 'none')
 	{
@@ -143,3 +144,6 @@ function viso_resize()
 	}
 
 }
+
+});
+

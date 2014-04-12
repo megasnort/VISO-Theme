@@ -1,19 +1,19 @@
-/*! 
+/*
     Theme Name: VISO
-    Theme URI:  http://www.viso.be
+    Theme URI:  https://github.com/megasnort/VISO-Theme
     Description: Theme using the colors of VISO, a school in Ghent
-    Version: 0.1
+    Version: 0.2
     Author: Stef Bastiaansen
     Author URI: http://www.megasnort.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	Tags: black, green, red, two-columns, fluid-layout, responsive-layout, custom-header, custom-colors, featured-image-header, featured-images, full-width-template
 */
-/*!
+/*
 VISO Theme, Copyright 2014 Megasnort.com
 VISO Theme is distributed under the terms of the GNU GPL
 */
-/*!
+/*
 	CSS was written in SASS. Files included in 'sass'-folder
 */
 /*! http://meyerweb.com/eric/tools/css/reset/ */
@@ -122,6 +122,11 @@ strong, b {
   background-color: #eee;
   background-color: rgba(255, 255, 255, 0.1); }
 
+.navError {
+  color: white;
+  line-height: 2.5em;
+  padding-left: 2em; }
+
 body {
   font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
   font-size: 15px;
@@ -148,13 +153,11 @@ body {
     font-weight: 300;
     color: #ee0900;
     font-size: 1.4em;
-    text-transform: uppercase;
     padding-bottom: 0.5em; }
   body h3 {
     font-weight: 300;
     color: #ee0900;
     font-size: 1.3em;
-    text-transform: uppercase;
     padding-bottom: 0.5em; }
   body > #aside {
     float: left;
@@ -177,7 +180,6 @@ body {
         font-weight: 300;
         color: #ee0900;
         font-size: 1.4em;
-        text-transform: uppercase;
         padding-bottom: 0.5em;
         text-align: left; }
       body > #aside #wp-calendar th {
@@ -215,8 +217,7 @@ body {
         color: white;
         display: block;
         float: left;
-        padding: 0.82em 1.4em;
-        text-transform: uppercase; }
+        padding: 0.82em 1.4em; }
       #nav .nav li a:hover, #nav .nav li a:active {
         border-width: 0;
         color: #ee0900; }
@@ -231,36 +232,44 @@ body {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
       #nav .nav .sub-menu li {
         clear: left; }
-  #nav #searchform {
-    float: right;
-    padding-top: 0.5em; }
-    #nav #searchform input[type="text"] {
-      height: 1.8em;
-      border-radius: 0.5em 0 0 0.5em;
-      border: white 0 solid;
-      float: left;
-      padding: 0.1em 0.1em 0.1em 0.5em;
-      margin-left: 3em;
-      width: 13em;
-      font-size: 0.8em;
-      color: #777; }
-    #nav #searchform input[type="text"]:focus {
-      color: #111111; }
-    #nav #searchform input[type="submit"] {
-      font-size: 0.8em;
-      float: left;
-      display: block;
-      height: 2em;
-      width: 2.5em;
-      border-radius: 0 0.5em 0.5em 0;
-      background-color: #ee0900;
-      background: url("images/zoek.png") center center no-repeat #ee0900;
-      transition: background-color 0.15s;
-      border-width: 0;
-      margin-right: 1em;
-      margin-bottom: 0.7em; }
-    #nav #searchform input[type="submit"]:hover {
-      background-color: #abc8b8; }
+
+.searchform {
+  float: right;
+  padding-top: 0.5em; }
+  .searchform input[type="text"] {
+    height: 1.8em;
+    border-radius: 0.4em 0 0 0.4em;
+    border: white 0 solid;
+    float: left;
+    padding: 0.1em 0.1em 0.1em 0.5em;
+    margin-left: 3em;
+    width: 13em;
+    font-size: 0.8em;
+    color: #777; }
+  .searchform input[type="text"]:focus {
+    color: #111111; }
+  .searchform input[type="submit"] {
+    font-size: 0.8em;
+    float: left;
+    display: block;
+    height: 2em;
+    width: 2.5em;
+    border-radius: 0 0.4em 0.4em 0;
+    background-color: #ee0900;
+    background: url("images/zoek.png") center center no-repeat #ee0900;
+    transition: background-color 0.15s;
+    border-width: 0;
+    margin-right: 1em;
+    margin-bottom: 0.7em; }
+  .searchform input[type="submit"]:hover {
+    background-color: #abc8b8; }
+
+#content .searchform {
+  float: left; }
+
+#content .searchform input[type="text"] {
+  background-color: #DDD;
+  margin-left: 0; }
 
 #content {
   clear: both;
@@ -329,7 +338,7 @@ body {
     background-color: white;
     margin: 0em 4em 2em 4em;
     padding: 2em;
-    border-radius: 0.4em;
+    border-radius: 0.3em;
     max-width: 40em;
     overflow: hidden; }
     #content article h1 {
@@ -339,7 +348,6 @@ body {
       #content article h1 a {
         color: #ee0900;
         font-size: 2em;
-        text-transform: uppercase;
         margin-right: 0.4em; }
       #content article h1 span {
         font-size: 0.8em;
@@ -445,7 +453,6 @@ body {
       #content article .content h4 {
         color: #ee0900;
         font-weight: 300;
-        text-transform: uppercase;
         font-size: 1.2em;
         margin: 1.8em 0 0.5em 0; }
     #content article .footer {
@@ -531,7 +538,8 @@ footer {
     margin-left: 0.8em; }
     #nav .nav a:link, #nav .nav a:visited {
       padding: 0.82em 1.5em; }
-  #nav #searchform input[type="text"] {
+
+  .searchform input[type="text"] {
     width: 12em; }
 
   #content {
@@ -559,7 +567,6 @@ footer {
       color: white;
       float: left;
       margin: 0.1em 1.4em 0 1.4em;
-      text-transform: uppercase;
       height: 25px;
       background-image: url("images/menu.png");
       background-repeat: no-repeat;
@@ -594,10 +601,11 @@ footer {
           color: #111111; }
         #nav .nav .sub-menu a:hover {
           color: #ee0900; }
-    #nav #searchform {
-      padding-top: 0.5em; }
-      #nav #searchform input[type="text"] {
-        width: 15em; }
+
+  .searchform {
+    padding-top: 0.5em; }
+    .searchform input[type="text"] {
+      width: 15em; }
 
   #content {
     padding-top: 2em; }
@@ -605,7 +613,7 @@ footer {
       height: 280px; }
     #content article {
       margin: 0 1.5em 1.5em 0;
-      border-radius: 0 0.4em 0.4em 0; }
+      border-radius: 0 0.3em 0.3em 0; }
     #content #pagination {
       margin: 0.5em 2em 0.5em 2em; }
 
@@ -622,9 +630,9 @@ footer {
       margin-right: 0.1em;
       padding: 0.1em;
       width: 36px; }
-    body #nav #searchform {
+    body .searchform {
       padding-right: 0.5em; }
-      body #nav #searchform input[type="text"] {
+      body .searchform input[type="text"] {
         width: 13em; }
     body > header {
       height: 100px;
@@ -636,7 +644,7 @@ footer {
       body #content iframe {
         height: 310px; }
       body #content article {
-        border-radius: 0.5em;
+        border-radius: 0.4em;
         margin: 1.5em;
         padding: 1.5em; }
         body #content article .footer .categorieen {
@@ -676,7 +684,7 @@ footer {
   #content iframe {
     height: 430px; }
 
-  #nav #searchform input[type="text"] {
+  .searchform input[type="text"] {
     width: 13em; } }
 @media screen and (min-width: 1500px) {
   body {
@@ -685,7 +693,7 @@ footer {
   #content iframe {
     height: 470px; }
 
-  #nav #searchform input[type="text"] {
+  .searchform input[type="text"] {
     width: 18em; } }
 @media screen and (min-width: 1600px) {
   body {
