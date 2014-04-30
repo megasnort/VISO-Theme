@@ -2,7 +2,7 @@
     Theme Name: VISO
     Theme URI:  https://github.com/megasnort/VISO-Theme
     Description: Theme using the colors of VISO, a school in Ghent
-    Version: 0.2
+    Version: 0.1
     Author: Stef Bastiaansen
     Author URI: http://www.megasnort.com
 	License: GNU General Public License v2 or later
@@ -86,24 +86,43 @@ html[xmlns] .clearfix {
   margin-left: 10px;
   margin-bottom: 10px; }
 
-.size-medium,
-.size-thumbnail {
-  border: 1px solid #eeeeee;
-  padding: 2px;
+a .size-medium,
+a .size-thumbnail {
   cursor: -webkit-zoom-in;
   cursor: -moz-zoom-in; }
 
-blockquote {
+.size-medium,
+.size-thumbnail {
+  border: 1px solid #eeeeee;
+  padding: 2px; }
+
+code, keyboard, pre, tt, var {
+  word-wrap: break-word;
+  font-family: courier, courier new, monaco, monospace;
+  color: #000;
+  font-weight: 100; }
+
+sub {
+  font-size: 0.75em;
+  position: relative;
+  top: 0.28em; }
+
+sup {
+  font-size: 0.75em;
+  position: relative;
+  bottom: 0.45em; }
+
+blockquote, q {
   margin: 1em;
   background-color: #eee;
   border-left: 1px solid #CCC;
   padding: 1em; }
 
-strike {
+strike, delete {
   text-decoration: line-through; }
 
 abbr, acronym {
-  border-bottom: 1px solid #111111;
+  border-bottom: 1px dotted #111111;
   line-height: 1.5em; }
 
 address {
@@ -221,6 +240,9 @@ body {
       #nav .nav li a:hover, #nav .nav li a:active {
         border-width: 0;
         color: #ee0900; }
+    #nav .nav li:hover {
+      z-index: 2000;
+      position: relative; }
     #nav .nav li.current_page_item > a {
       font-weight: 700; }
     #nav .nav .sub-menu {
@@ -455,6 +477,9 @@ body {
         font-weight: 300;
         font-size: 1.2em;
         margin: 1.8em 0 0.5em 0; }
+      #content article .content img {
+        max-width: 100%;
+        height: auto; }
     #content article .footer {
       border-top: 1px solid #EEE;
       width: 100%;
@@ -523,6 +548,17 @@ footer {
 
 .gallery-caption {
   text-align: right; }
+
+.sticky {
+  border: 1px solid #888888; }
+
+img.alignnone,
+.alignnone img {
+  max-width: 100%;
+  height: auto; }
+
+div.alignnone {
+  max-width: 100%; }
 
 @media screen and (max-width: 950px) {
   body {
