@@ -1,8 +1,11 @@
 <?php load_theme_textdomain('text_domain'); ?>
 <?php register_nav_menu( 'primary', 'Main Menu' ); ?>
-<?php if (function_exists('register_sidebar'))  
+<?php if (function_exists('register_sidebar'))
+{
   register_sidebar(array('name'=>'Side bar'));  
+  register_sidebar(array('name'=>'Logged in only Side bar'));
   register_sidebar(array('name'=>'Footer'));  
+}
 ?>
 <?php add_theme_support( 'automatic-feed-links' ); ?>
 <?php add_theme_support( 'post-thumbnails' ); ?>

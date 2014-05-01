@@ -31,11 +31,10 @@ jQuery(document).ready(function($) {
 		});	
 		
 		
-		$('ul.nav > li.menu-item-has-children > a').mouseenter(viso_showMenu);
-		$('ul.nav > li.menu-item-has-children > a').click(viso_toggleMenu);
+		$('ul.nav > li.menu-item-has-children > a').mouseenter(viso_showMenu).click(viso_toggleMenu);
+		
 		
 		$('ul.nav > li').mouseleave(viso_hideMenu);
-		
 
 		
 		$('#content, #aside, header').click(function()
