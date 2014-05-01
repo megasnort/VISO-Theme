@@ -11,11 +11,19 @@ A responsive theme with support for a two level deep navigation.
 
 == Description ==
 
-VISO Theme was developed for the blog of the school where I teach.
-The theme should be fully responsive.
-The colors of the theme can be modified in the settings, together with the header image and some text properties (facebook, twitter ...)
+VISO Theme is e responsive blog theme developed for the multimedia departement of the school where I teached.
+The colors can be modified in the backend, together with the header image and some other properties (facebook, twitter ...)
 
 
 == Installation ==
 
 Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
+
+
+
+== Other sources ==
+
+VISO uses
+- Image Gallery 'Lightbox 2' (https://github.com/lokesh/lightbox2)
+- The Font 'Lato' (http://fonts.googleapis.com/css?family=Lato:100,300,300italic,700)
+

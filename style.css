@@ -12,6 +12,10 @@
 /*
 VISO Theme, Copyright 2014 Megasnort.com
 VISO Theme is distributed under the terms of the GNU GPL
+VISO Theme uses
+- Lightbox 2: https://github.com/lokesh/lightbox2/ / lokeshdhakar.com / Creative Commons Attribution 2.5 License
+- The Font 'Lato' (http://fonts.googleapis.com/css?family=Lato:100,300,300italic,700)
+Picture in preview-picture by myself: http://flickr.com/photos/megasnort/
 */
 /*
 	CSS was written in SASS. Files included in 'sass'-folder
@@ -29,7 +33,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video {: 
   margin: 0;
   padding: 0;
   border: 0;
