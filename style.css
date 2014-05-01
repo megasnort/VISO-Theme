@@ -480,6 +480,9 @@ body {
       #content article .content img {
         max-width: 100%;
         height: auto; }
+      #content article .content caption {
+        max-width: 100%;
+        height: auto; }
     #content article .footer {
       border-top: 1px solid #EEE;
       width: 100%;
@@ -551,14 +554,6 @@ footer {
 
 .sticky {
   border: 1px solid #888888; }
-
-img.alignnone,
-.alignnone img {
-  max-width: 100%;
-  height: auto; }
-
-div.alignnone {
-  max-width: 100%; }
 
 @media screen and (max-width: 950px) {
   body {

@@ -792,6 +792,12 @@ body
 				max-width: 100%;
 				height: auto;
 			}
+			
+			caption
+			{
+				max-width: 100%;
+				height: auto;
+			}
 		}
 		
 		.footer
@@ -936,17 +942,6 @@ footer
 }
 
 
-img.alignnone,
-.alignnone img
-{
-	max-width: 100%;
-	height: auto;
-}
-
-div.alignnone
-{
-	max-width: 100%;
-}
 
 
 @media screen and (max-width: 950px)

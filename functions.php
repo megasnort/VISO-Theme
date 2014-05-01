@@ -13,11 +13,13 @@ add_action( 'wp_enqueue_scripts', 'add_extra_stylesheets_and_scripts' );
 
 function add_extra_stylesheets_and_scripts() {
  
-   wp_enqueue_style( 'Fancybox', get_template_directory_uri() . '/css/jquery.fancybox.css');
+ //  wp_enqueue_style( 'Fancybox', get_template_directory_uri() . '/css/jquery.fancybox.css');
+   wp_enqueue_style( 'Lightbox2', get_template_directory_uri() . '/css/lightbox.css');
    wp_enqueue_style( 'Google Font', 'http://fonts.googleapis.com/css?family=Lato:100,300,300italic,700');
 
    wp_enqueue_script( 'jquery');      
-   wp_enqueue_script( 'Fancybox', get_template_directory_uri() . '/js/jquery.fancybox.pack.js');   
+  // wp_enqueue_script( 'Fancybox', get_template_directory_uri() . '/js/jquery.fancybox.pack.js');   
+   wp_enqueue_script( 'Lightbox2', get_template_directory_uri() . '/js/lightbox.js');   
    wp_enqueue_script( 'VISO-scripts', get_template_directory_uri() . '/js/scripts.js');   
 
 

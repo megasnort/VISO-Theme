@@ -1,24 +1,35 @@
 jQuery(document).ready(function($) {
 	
-	var speed = 180;
+	var viso_speed = 180;
 	
 	$(document).ready(function(){
+				
 		
-		// Make sure images are opened in a fancybox gallery per post
 		$('#content a[href$=".jpg"], #content a[href$=".jpeg"], #content a[href$=".png"],#content a[href$=".gif"]').each(function()
 		{
-			$(this).attr('rel',$(this).parent().parent().parent().find('a[rel="bookmark"]').attr('title'));
-		})
+			var element = $(this).parent();
+			
+			do{
+				if(element.prop('tagName').toLowerCase() == 'article')
+				{
+					$(this).attr('data-lightbox', element.attr('id'));
+					break;
+				}
+				element = element.parent();
+			}
+			while(element.prop('tagName').toLowerCase() != 'body')
+			
+		});
 		
-		$('#content a[href$=".jpg"], #content a[href$=".jpeg"], #content a[href$=".png"],#content a[href$=".gif"]').fancybox();
 		
 		$('#menuknop').click(function(e){
 		
 			e.preventDefault();
 	
-			$('.nav').slideToggle(speed);
+			$('.nav').slideToggle(viso_speed);
 	
 		});	
+		
 		
 		$('ul.nav > li.menu-item-has-children > a').mouseenter(viso_showMenu);
 		$('ul.nav > li.menu-item-has-children > a').click(viso_toggleMenu);
@@ -29,11 +40,11 @@ jQuery(document).ready(function($) {
 		
 		$('#content, #aside, header').click(function()
 		{
-			$('.sub-menu').slideUp(speed);
+			$('.sub-menu').slideUp(viso_speed);
 			
 			if($('#menuknop').css('display') == 'block')
 			{
-				$('.nav').slideUp(speed);	
+				$('.nav').slideUp(viso_speed);	
 			}
 			
 		});
@@ -59,16 +70,16 @@ jQuery(document).ready(function($) {
 			{
 				if(url != $(this).attr('href'))
 				{
-					$(this).next().slideUp(speed);
+					$(this).next().slideUp(viso_speed);
 				}
 			});
 			
-			$(this).next().slideDown(speed);	
+			$(this).next().slideDown(viso_speed);	
 	
 		}
 		else
 		{
-			$(this).next().slideUp(speed);	
+			$(this).next().slideUp(viso_speed);	
 		}
 	
 	}
@@ -86,11 +97,11 @@ jQuery(document).ready(function($) {
 			{
 				if(url != $(this).attr('href'))
 				{
-					$(this).next().slideUp(speed);
+					$(this).next().slideUp(viso_speed);
 				}
 			});
 			
-			$(this).next().slideDown(speed);	
+			$(this).next().slideDown(viso_speed);	
 		
 		}
 	
@@ -103,7 +114,7 @@ jQuery(document).ready(function($) {
 		if($('#menuknop').css('display') != 'block')
 		{
 	
-			$(this).find('.sub-menu').slideUp(speed);	
+			$(this).find('.sub-menu').slideUp(viso_speed);	
 		}
 	}
 	
