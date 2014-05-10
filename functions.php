@@ -1,30 +1,31 @@
-<?php load_theme_textdomain('text_domain'); ?>
-<?php register_nav_menu( 'primary', 'Main Menu' ); ?>
-<?php if (function_exists('register_sidebar'))
+<?php
+
+load_theme_textdomain('text_domain');
+register_nav_menu( 'primary', 'Main Menu' );
+
+if (function_exists('register_sidebar'))
 {
   register_sidebar(array('name'=>'Side bar'));  
   register_sidebar(array('name'=>'Logged in only Side bar'));
   register_sidebar(array('name'=>'Footer'));  
 }
-?>
-<?php add_theme_support( 'automatic-feed-links' ); ?>
-<?php add_theme_support( 'post-thumbnails' ); ?>
-<?php
+
+add_theme_support( 'automatic-feed-links' );
+add_theme_support( 'post-thumbnails' );
+
 add_action( 'customize_register', 'viso_hg_customize_register' );
 add_action( 'wp_enqueue_scripts', 'add_extra_stylesheets_and_scripts' );
 
 
 function add_extra_stylesheets_and_scripts() {
- 
- //  wp_enqueue_style( 'Fancybox', get_template_directory_uri() . '/css/jquery.fancybox.css');
+
+   wp_enqueue_style( 'VISO-styles', get_template_directory_uri() . '/style.css');
    wp_enqueue_style( 'Lightbox2', get_template_directory_uri() . '/css/lightbox.css');
-   wp_enqueue_style( 'Google Font', 'http://fonts.googleapis.com/css?family=Lato:100,300,300italic,700');
+   wp_enqueue_style( 'Google Font', '//fonts.googleapis.com/css?family=Lato:100,300,300italic,700');
 
    wp_enqueue_script( 'jquery');      
-  // wp_enqueue_script( 'Fancybox', get_template_directory_uri() . '/js/jquery.fancybox.pack.js');   
    wp_enqueue_script( 'Lightbox2', get_template_directory_uri() . '/js/lightbox.js');   
    wp_enqueue_script( 'VISO-scripts', get_template_directory_uri() . '/js/scripts.js');   
-
 
 }
 
@@ -70,8 +71,6 @@ add_action('widgets_init', 'unregister_default_wp_widgets', 1);
 
 
 
-
-?><?php
 $defaults = array(
 	'random-default'         => false,
 	'height'                 => 220,
@@ -82,8 +81,9 @@ $defaults = array(
 	'uploads'                => true
 );
 
-add_theme_support('custom-header', $defaults); ?>
-<?php function viso_build_options_page() { ?>
+add_theme_support('custom-header', $defaults);
+
+function viso_build_options_page() { ?>
 <div id="theme-options-wrap">
 	<div class="icon32" id="icon-tools"> <br /> </div>
 	<h2>VISO Settings</h2>
@@ -97,7 +97,10 @@ add_theme_support('custom-header', $defaults); ?>
 	</form>
 </div>
 <?php }
+
+
 add_action('admin_init', 'viso_register_and_build_fields');
+
 
 function viso_register_and_build_fields() {
 	register_setting('theme_options', 'theme_options', 'viso_validate_setting');
@@ -176,5 +179,7 @@ function viso_theme_options_page()
 	add_theme_page('VISO', 'VISO', 'administrator', __FILE__, 'viso_build_options_page');
 }
 
+
+add_editor_style(get_template_directory_uri() . '/css/editor.css');
 
 ?>

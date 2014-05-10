@@ -1,7 +1,7 @@
 /*
     Theme Name: VISO
     Theme URI:  https://github.com/megasnort/VISO-Theme
-    Description: Responsive blog theme using the colors of VISO, a school in Ghent
+    Description: Responsive blog-theme with support for a two-level navigation using the colors of VISO, a school in Ghent. The colors can be changed in the appearance-panel, together with some other settings.
     Version: 0.1
     Author: Stef Bastiaansen
     Author URI: http://www.megasnort.com
@@ -10,17 +10,8 @@
 	Tags: black, green, red, two-columns, fluid-layout, responsive-layout, custom-header, custom-colors, featured-image-header, featured-images, full-width-template
 */
 /*
-VISO Theme, Copyright 2014 Megasnort.com
-VISO Theme is distributed under the terms of the GNU GPL
-VISO Theme uses
-- Lightbox 2: https://github.com/lokesh/lightbox2/ / lokeshdhakar.com / Creative Commons Attribution 2.5 License
-- The Font 'Lato' (http://fonts.googleapis.com/css?family=Lato:100,300,300italic,700)
-Picture in preview-picture by myself: http://flickr.com/photos/megasnort/
-*/
-/*
 	CSS was written in SASS. Files included in 'sass'-folder
 */
-/*! http://meyerweb.com/eric/tools/css/reset/ */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -33,7 +24,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {: 
+time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -367,18 +358,28 @@ body {
     border-radius: 0.3em;
     max-width: 40em;
     overflow: hidden; }
-    #content article h1 {
+    #content article header h1 {
       margin-bottom: 0.5em;
       border-bottom: 1px solid #eeeeee;
-      padding-bottom: 0.8em; }
-      #content article h1 a {
+      padding-bottom: 0.8em;
+      font-size: 1em; }
+      #content article header h1 a {
         color: #ee0900;
         font-size: 2em;
         margin-right: 0.4em; }
-      #content article h1 span {
+      #content article header h1 span {
         font-size: 0.8em;
         white-space: nowrap;
         color: #888888; }
+    #content article h1 {
+      font-size: 3em;
+      border-bottom: 1px solid #eeeeee;
+      padding-bottom: 0.3em; }
+    #content article h2 {
+      font-size: 1.8em;
+      border-bottom: 1px solid #eeeeee;
+      padding-bottom: 0.3em;
+      margin-bottom: 0.3em; }
     #content article h3 {
       border-bottom: 1px solid #eeeeee;
       padding-bottom: 0.3em; }

@@ -1,7 +1,7 @@
 /*
     Theme Name: VISO
     Theme URI:  https://github.com/megasnort/VISO-Theme
-    Description: Theme using the colors of VISO, a school in Ghent
+    Description: Responsive blog-theme with support for a two-level navigation using the colors of VISO, a school in Ghent. The colors can be changed in the appearance-panel, together with some other settings.
     Version: 0.1
     Author: Stef Bastiaansen
     Author URI: http://www.megasnort.com
@@ -9,11 +9,6 @@
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	Tags: black, green, red, two-columns, fluid-layout, responsive-layout, custom-header, custom-colors, featured-image-header, featured-images, full-width-template
 */  
-
-/*
-VISO Theme, Copyright 2014 Megasnort.com
-VISO Theme is distributed under the terms of the GNU GPL
-*/
 
 /*
 	CSS was written in SASS. Files included in 'sass'-folder
@@ -555,34 +550,56 @@ body
 		max-width: 40em;
 		overflow: hidden;
 		
-		h1
+		header
 		{
-			margin-bottom:0.5em;
-			border-bottom: 1px solid $superlichtgrijs;
-			padding-bottom: 0.8em;
-			
-			a
+			h1
 			{
-				color:$rood;
-				font-size: 2em;
-				margin-right:0.4em;
-			} 
-			
-			span
-			{
-				font-size: 0.8em;
-				white-space: nowrap;
-				color:$grijs;
+				margin-bottom:0.5em;
+				border-bottom: 1px solid $superlichtgrijs;
+				padding-bottom: 0.8em;
+				font-size: 1em;
+
+				
+				a
+				{
+					color:$rood;
+					font-size: 2em;
+					margin-right:0.4em;
+				} 
+				
+				span
+				{
+					font-size: 0.8em;
+					white-space: nowrap;
+					color:$grijs;
+				}
+				
 			}
-			
 		}
 		
+		h1 
+		{
+			font-size: 3em;
+			border-bottom: 1px solid $superlichtgrijs;
+			padding-bottom:0.3em;
+
+		}
+		
+		h2
+		{
+			font-size:1.8em;
+			border-bottom: 1px solid $superlichtgrijs;
+			padding-bottom:0.3em;
+			margin-bottom: 0.3em;
+		}
+
 		
 		h3
 		{
 			border-bottom: 1px solid $superlichtgrijs;
 			padding-bottom:0.3em;
 		}
+		
 		
 		.comment
 		{

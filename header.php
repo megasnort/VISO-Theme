@@ -8,12 +8,7 @@
 		
 		<title><?php bloginfo('name') . wp_title(); ?></title> 
 
-		<?php $template_dir = get_template_directory_uri(); ?> 
-
-
-		<link href='<?php echo get_stylesheet_uri(); ?>' rel='stylesheet' type='text/css'>
-
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+		<link rel="pingback" href="<?php esc_url(bloginfo( 'pingback_url' )); ?>" />
 				
 		<!--[if lt IE 9]>
 		<script src="<?php $template_dir; ?>/js/ie.js" type="text/javascript" ></script>
@@ -28,7 +23,7 @@
 				{
 					return (strlen($str) == '7') ? true : false;
 				}				
-			
+
 			?>
 		
 			#nav

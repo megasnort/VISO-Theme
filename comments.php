@@ -1,4 +1,4 @@
-<?php $ops = get_option('theme_options'); ?>
+<?php $options = get_option('theme_options'); ?>
 <?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
 <?php
 	
@@ -11,7 +11,7 @@
 	<article class="smaller">
 		<header>
 			<h3>
-				<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo ($ops['viso_comments'] == '') ? 'comments' : $ops['viso_comments'] ; ?></a>
+				<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo ($options['viso_comments'] == '') ? 'comments' : $options['viso_comments'] ; ?></a>
 			</h3>
 		</header>
 		<section>
@@ -38,7 +38,7 @@
 		?>
 		<article>
 			<section>
-				<?php comment_form(array('title_reply' 	=> 	__( ($ops['viso_comment'] == '') ? 'comment' : $ops['viso_comment']  ))); ?>
+				<?php comment_form(array('title_reply' 	=> 	($options['viso_comment'] == '') ? 'comment' : $options['viso_comment']  )); ?>
 			</section>
 	
 		</article>

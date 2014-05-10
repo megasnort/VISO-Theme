@@ -26,4 +26,5 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 VISO uses
 - Image Gallery 'Lightbox 2' (https://github.com/lokesh/lightbox2)
 - The Font 'Lato' (http://fonts.googleapis.com/css?family=Lato:100,300,300italic,700)
-
+- Reset.css (http://meyerweb.com/eric/tools/css/reset/)
+- Social Media Icons (images): http://www.greenleafimaging.com/blog/2011/08/social-media-icons/

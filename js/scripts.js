@@ -153,6 +153,19 @@ jQuery(document).ready(function($) {
 				$('#content').height('auto');
 			}		
 		}
+		
+		var contentWidth = parseInt($('article').width());
+		
+		$('.wp-caption').each(function(){
+		
+			var width = parseInt($(this).find('img').attr('width'));
+			
+			if(width > contentWidth)
+			{
+				$(this).width('auto');
+			}
+		
+		});
 	
 	}
 

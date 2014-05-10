@@ -9,7 +9,7 @@
 					<?php
 						if($options['viso_twitterurl'] != '')
 						{
-							?><a href="<?php echo $options['viso_facebookurl']; ?>">
+							?><a href="<?php echo esc_url($options['viso_facebookurl']); ?>">
 								<img src="<?php echo $template_dir; ?>/images/facebook.png" alt="facebook" />
 							</a><?php
 						}
@@ -18,7 +18,7 @@
 					<?php
 						if($options['viso_twitterurl'] != '')
 						{
-							?><a href="<?php echo $options['viso_twitterurl']; ?>" target="_blank">
+							?><a href="<?php echo esc_url($options['viso_twitterurl']); ?>" target="_blank">
 								<img src="<?php echo $template_dir; ?>/images/twitter.png" alt="facebook" />
 							</a><?php
 						}
@@ -42,7 +42,7 @@
 			{
 				$theme = wp_get_theme();
 				
-				echo '<a href="' . $theme->get('AuthorURI') . '" target="_blank">' . $theme->get( 'Name' ) . ' v' . $theme->get( 'Version' ) . ' by ' . $theme->get( 'Author' ) . '</a>';
+				echo '<a href="' . esc_url($theme->get('AuthorURI')) . '" target="_blank">' . $theme->get( 'Name' ) . ' v' . $theme->get( 'Version' ) . ' by ' . $theme->get( 'Author' ) . '</a>';
 			}
 			else
 			{
