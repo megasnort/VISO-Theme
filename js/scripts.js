@@ -52,9 +52,12 @@ jQuery(document).ready(function($) {
 		$('a#menuknop span').html($('#nav .current_page_item a').html());
 			
 		
-		viso_resize();
 		$(window).resize(viso_resize);
+		
+		$(window).load(viso_resize);
 	});
+	
+
 	
 	
 	function viso_toggleMenu(e)
@@ -130,7 +133,7 @@ jQuery(document).ready(function($) {
 			$('.nav').css('display', 'block');
 		}
 			
-		//Cheap trick to check if media query is active (innerWidth gives a different result in Webkit)
+		//Cheap trick to check if media query is active
 	
 		if($('a#menuknop span').css('display') == 'none')
 		{
